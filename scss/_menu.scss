@@ -1,0 +1,107 @@
+@use "mixins" as mix;
+@use "colors" as c;
+
+.nav {
+	@include mix.flex(flex-start, space-between);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 2rem 0;
+
+	@include mix.media(tablet) {
+		align-items: center;
+		height: initial;
+		height: initial;
+		padding: 0;
+	}
+}
+
+.menu {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	flex-direction: column;
+
+	$this: &;
+
+	&__item {
+		list-style: none;
+		font-size: 4rem;
+		opacity: 0;
+		padding: 0.75rem;
+		transform: translateY(-50%);
+	}
+
+	&--loaded {
+		@for $i from 1 through 5 {
+			#{$this}__item:nth-child(#{$i}) {
+				animation: disappear 0.5s #{$i/6}s reverse forwards, slideY 0.5s #{$i/6}s forwards;
+			}
+		}
+	}
+
+	&__link {
+		position: relative;
+		display: block;
+		padding: 0 1rem;
+		margin: 0 1rem;
+		text-decoration: none;
+		color: white;
+
+		&::before {
+			@include mix.pseudo;
+			pointer-events: none;
+			bottom: -0.5rem;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			border-radius: 2px;
+			background: map-get(c.$main-colors, "reddy");
+			transform: scaleX(0);
+
+			transform-origin: right;
+			transition: transform 0.2s 0s ease;
+		}
+
+		&::after {
+			@include mix.pseudo;
+			pointer-events: none;
+			bottom: -0.5rem;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			border-radius: 2px;
+			background: map-get(c.$main-colors, "reddy");
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: transform 0.2s 0s ease;
+		}
+
+		&:hover::before {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+
+		&:hover::after {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+	}
+
+	@include mix.media(tablet) {
+		@include mix.flex;
+		position: initial;
+		flex-direction: row;
+		transform: none;
+		&__item {
+			font-size: 2rem;
+			padding: 0;
+		}
+	}
+}
+
+.header--opened .menu {
+	@include mix.flex;
+}

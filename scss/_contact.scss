@@ -1,0 +1,311 @@
+@use "colors" as c;
+@use "mixins" as mix;
+
+.profile {
+	@include mix.flex;
+	flex-direction: column;
+
+	&__img {
+		max-height: 200px;
+		border-radius: 50%;
+		margin: 1rem;
+	}
+
+	&__name {
+		text-align: center;
+		white-space: nowrap;
+		color: map-get(c.$main-colors, "primary");
+		font-size: 2.5rem;
+	}
+}
+
+.form-cnt {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: white;
+	width: 100%;
+	height: 100vh;
+	opacity: 0.5rem;
+	overflow: auto;
+
+	&__header {
+		margin: 3rem;
+		text-align: center;
+		font-size: 2.5rem;
+		font-weight: 300;
+		color: map-get(c.$main-colors, "primary");
+		text-transform: uppercase;
+		letter-spacing: 3px;
+	}
+
+	&__close {
+		cursor: pointer;
+		position: fixed;
+		top: 0;
+		right: 0;
+		font-size: 8rem;
+		border: none;
+		background: none;
+	}
+
+	&--opened {
+		display: block;
+	}
+
+	&__img {
+		filter: opacity(40%);
+		max-width: 100%;
+	}
+
+	@include mix.media(tablet) {
+		&__header {
+			font-size: clamp(5rem, 7vw, 7rem);
+		}
+
+		&__img {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -50%;
+			width: min(1300px, 100%);
+			z-index: -1;
+		}
+	}
+}
+
+.contact-form {
+	margin: 3rem;
+	margin-bottom: 0;
+
+	@include mix.media(tablet) {
+		margin: 3rem auto;
+		padding: 3rem;
+	}
+
+	@include mix.media(smallPC) {
+		margin: 0 auto;
+		@include mix.flex(center, space-around);
+		flex-direction: row-reverse;
+	}
+
+	@include mix.media(mediumPC) {
+		justify-content: center;
+	}
+}
+
+.phone-contact {
+	margin: 3rem;
+
+	@include mix.media(smallPC) {
+		margin: 0;
+		width: 300px;
+	}
+
+	@include mix.media(smallPC) {
+		width: 500px;
+	}
+}
+
+.phone-zone {
+	@include mix.flex;
+
+	&__phone-link {
+		color: map-get(c.$main-colors, "primary");
+	}
+
+	&__phone-icon {
+		margin: 0.5rem;
+		font-size: 5rem;
+	}
+
+	&__phone-button {
+		display: none;
+		background: transparent;
+		border: none;
+		padding: 1rem;
+		font-size: 2rem;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+
+	@include mix.media(smallPC) {
+		margin: 2rem 0;
+
+		&__phone-link {
+			@include mix.flex;
+			text-decoration: none;
+		}
+
+		&__phone-icon {
+			font-size: 3rem;
+		}
+
+		&__phone-button {
+			display: block;
+		}
+	}
+}
+
+.input-info {
+	border: none;
+}
+
+.row {
+	@include mix.flex(flex-start);
+	flex-direction: column;
+	margin-bottom: 4rem;
+	width: 100%;
+
+	&--area {
+		margin-bottom: 1rem;
+	}
+
+	@include mix.media(tablet) {
+		&--double {
+			width: 50%;
+		}
+	}
+}
+
+.note-positioned {
+	position: absolute;
+}
+
+.rows {
+	@include mix.media(tablet) {
+		@include mix.flex;
+		gap: 4rem;
+	}
+}
+
+.form-label {
+	color: map-get(c.$main-colors, "primary");
+	font-size: 2rem;
+	font-weight: 450;
+
+	&__required-icon {
+		font-size: 1.3rem;
+	}
+}
+
+.submit-cnt {
+	margin-left: auto;
+	position: relative;
+}
+
+.form-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	display: block;
+	background: map-get(c.$main-colors, "primary");
+	border: none;
+	border-radius: 0.75rem;
+	font-size: 2.5rem;
+	padding: 1.5rem 3rem;
+
+	&__label {
+		display: none;
+		padding: 0 1rem;
+		color: white;
+	}
+
+	&__icon {
+		color: white;
+	}
+
+	@include mix.media(tablet) {
+		@include mix.flex;
+		left: 0;
+		right: initial;
+
+		&__label {
+			display: inline;
+		}
+	}
+}
+
+.input-wrapper {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin: 1rem 0;
+}
+
+.form-input {
+	font-family: "Inter", sans-serif;
+	padding: 1.25rem;
+	border: 3px solid map-get(c.$main-colors, "primary");
+	border-radius: 0.85rem;
+	background: transparent;
+	font-size: 2rem;
+	width: 100%;
+	resize: none;
+	padding-left: 4rem;
+
+	&::placeholder {
+		color: hsl(0, 0%, 80%);
+	}
+
+	&:focus-visible {
+		outline: none;
+		background: hsla(0, 0%, 50%, 0.1);
+	}
+
+	@supports not selector(*:focus-visible) {
+		&:focus {
+			outline: none;
+			background: gray;
+		}
+	}
+}
+
+.form-placeholder {
+	@include mix.flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: hsl(0, 0%, 80%);
+	pointer-events: none;
+	font-size: 2rem;
+
+	&--textarea {
+		margin: 1.25rem 1rem;
+	}
+
+	&:not(&--textarea) {
+		top: 50%;
+		margin-left: 1rem;
+		transform: translateY(-50%);
+	}
+
+	& ~ &__label {
+		background: red;
+	}
+
+	&__icon {
+		margin-right: 0.5rem;
+		font-size: 1.5em;
+		transition: color 0.5s 0s ease;
+	}
+
+	&__label {
+		transition: opacity 0.5s 0s ease;
+	}
+}
+
+.form-input:focus ~ .form-placeholder {
+	.form-placeholder {
+		&__icon {
+			color: map-get(c.$main-colors, "primary");
+		}
+
+		&__label {
+			opacity: 0;
+		}
+	}
+}

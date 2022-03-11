@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jacob Chodubski</title>
+		<meta name="description" content="Jacob Chodubski - Programming and designing" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script defer="defer" src="./js/loader.js"></script>
+		<script defer="defer" src="./js/script.js"></script>
+		<script defer="defer" src="./js/projects.js"></script>
+		<script defer="defer" src="./js/helpers.js"></script>
+		<link rel="icon" href="./imgs/logo-red.svg" />
+		<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+	</head>
+
+	<body class="page">
+		<header class="header">
+			<nav class="nav">
+				<div class="logo">
+					<a href="index.html" class="logo__link">
+						<svg class="logo" width="101" height="40" viewBox="0 0 101 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path class="logo__path logo__path--first" d="M35.5 10.5L35.0094 47.5C36 87 72.232 93.4606 90 66" stroke="white" stroke-width="20" stroke-linecap="round" />
+							<path class="logo__path logo__path--second" d="M10.5 82C65.7722 92.515 -6 -12.5 90 15" stroke="#FF0066" stroke-width="20" stroke-linecap="round" />
+						</svg>
+					</a>
+				</div>
+				<button class="hamburger-menu">
+					<div class="hamburger-menu__line hamburger-menu__line--first"></div>
+					<div class="hamburger-menu__line hamburger-menu__line--second"></div>
+					<div class="hamburger-menu__line hamburger-menu__line--last"></div>
+				</button>
+				<ul class="menu">
+					<li class="menu__item">
+						<a href="#" class="menu__link">
+							<p class="text">Home</p>
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#about" class="menu__link">
+							<p class="text">About</p>
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#skills" class="menu__link">
+							<p class="text">Skills</p>
+						</a>
+					</li>
+					<li class="menu__item">
+						<a href="#projects" class="menu__link">
+							<p class="text">Projects</p>
+						</a>
+					</li>
+					<li class="menu__item menu__item--contact">
+						<a href="#" class="menu__link">
+							<p class="text">Contact</p>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="cube-box">
+			<div class="cube">
+				<section class="cube__face cube__face--1 section section--home">
+					<main class="main">
+						<header class="hello">
+							<h1 class="hello__header hello__header--main">Namaste !</h1>
+							<h1 class="hello__header hello__header--second">I'm Jacob Chodubski</h1>
+						</header>
+						<section class="home-desc">
+							<p class="home-desc__title">I design & code</p>
+							<p class="home-desc__title"><span class="strong">user interfaces</span>,<span class="strong">web applications</span> and <span class="strong">more</span></p>
+						</section>
+						<div class="scroll-down-cnt">
+							<button aria-label="scroll-down" class="go-down"><span class="go-down__text iconify-inline" data-icon="ep:d-arrow-right"></span></button>
+						</div>
+					</main>
+				</section>
+
+				<section class="cube__face cube__face--2 detail-sections">
+					<section id="about" class="section section--about">
+						<canvas class="pattern-canvas"></canvas>
+						<div class="section__cnt">
+							<div class="about-description">
+								<header class="about-header">
+									<h1 class="about-header__text">
+										<svg class="svg-text svg-text--about">
+											<text class="svg-text__text svg-text__text--about" x="100" y="100">about</text>
+										</svg>
+									</h1>
+								</header>
+								<p class="section__description">
+									I’m an 18-year-old person, who likes programming and a little design. Although I’m pretty familiar with using different libraries and react framework, my
+									websites are primarily hand-coded using HTML5, CSS3, SVG & Vanilla JavaScript, unlike web applications.
+								</p>
+								<p class="section__description section__description--strong section__description--italic">
+									Following popular documentations and experienced programmers, I’m driven to achieve my goal and save browser support, with emphasis on performance. Always
+									curious about new technologies and keep learning about them.
+								</p>
+							</div>
+							<img class="section__picture" src="./imgs/me.png" alt="me" />
+						</div>
+					</section>
+					<section id="skills" class="section section--skills">
+						<div class="responsive-cnt">
+							<div class="rocket-cnt">
+								<iframe src="https://my.spline.design/rocket-f1d89778409f1d7d05c2c0f6682e62f7/" frameborder="0" width="372" height="322"></iframe>
+							</div>
+							<header class="skills-header">
+								<h1 class="skills-header__text">
+									<svg class="svg-text svg-text--about">
+										<text class="svg-text__text svg-text__text--skills" x="100" y="100">skills</text>
+									</svg>
+								</h1>
+							</header>
+							<div class="categories">
+								<div class="categories__column categories__column--dev">
+									<header class="category-header">
+										<div class="category-header__icon">
+											<svg class="category-header__svg" width="75" height="74" viewBox="0 0 75 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<g filter="url(#filter0_d_103_4)">
+													<path
+														d="M46.1715 7.09675L46.1716 7.09651C46.1943 7.01739 46.2295 6.95051 46.27 6.898C46.3104 6.84571 46.354 6.81014 46.3939 6.78747C46.4335 6.765 46.4709 6.75425 46.5043 6.75087C46.5375 6.74751 46.5722 6.75086 46.6081 6.76271C46.6444 6.77467 46.6859 6.79665 46.7278 6.83378C46.7699 6.87117 46.8117 6.92332 46.8453 6.99119C46.8789 7.0592 46.9019 7.13853 46.9095 7.22432C46.9171 7.31004 46.9086 7.3956 46.8859 7.47474C46.8859 7.47482 46.8859 7.4749 46.8858 7.47497L29.8213 66.9025L29.8212 66.9028C29.7744 67.0659 29.6797 67.166 29.5989 67.2118C29.5237 67.2545 29.4512 67.2585 29.3847 67.2366C29.3133 67.2131 29.216 67.1467 29.1475 67.0081C29.0777 66.8668 29.0597 66.6892 29.1069 66.5245C29.1069 66.5244 29.1069 66.5244 29.107 66.5243L46.1715 7.09675ZM23.2972 21.4225L23.2958 21.4239L9.87024 35.8054L8.75543 36.9996L9.87024 38.1938L23.2957 52.5751C23.2957 52.5752 23.2958 52.5753 23.2958 52.5753C23.3827 52.6686 23.4506 52.8192 23.4506 52.9994C23.4506 53.1798 23.3826 53.3305 23.2957 53.4237C23.2125 53.5128 23.1266 53.538 23.0648 53.538C23.0031 53.538 22.9172 53.5128 22.834 53.4237L7.90248 37.4239L7.90097 37.4223C7.85903 37.3775 7.81987 37.3177 7.7912 37.2437C7.76248 37.1695 7.7464 37.0863 7.7464 36.9996C7.7464 36.913 7.76248 36.8297 7.7912 36.7556C7.81987 36.6815 7.85903 36.6218 7.90098 36.577L7.90248 36.5754L22.834 20.5756L22.8355 20.574C22.8772 20.5292 22.9201 20.5007 22.9583 20.4837C22.9961 20.4669 23.0319 20.4601 23.0648 20.4601C23.0977 20.4601 23.1336 20.4669 23.1714 20.4837C23.2096 20.5007 23.2525 20.5292 23.2941 20.574L23.2972 20.5772C23.3391 20.622 23.3783 20.6817 23.4069 20.7558C23.4357 20.8299 23.4517 20.9132 23.4517 20.9998C23.4517 21.0865 23.4357 21.1698 23.4069 21.2439C23.3783 21.318 23.3391 21.3777 23.2972 21.4225ZM52.697 21.4239L52.6956 21.4225C52.6537 21.3777 52.6145 21.318 52.5859 21.2439C52.5571 21.1698 52.5411 21.0865 52.5411 20.9998C52.5411 20.9132 52.5571 20.8299 52.5859 20.7558C52.6145 20.6817 52.6537 20.622 52.6956 20.5772L52.6987 20.574C52.7403 20.5292 52.7832 20.5007 52.8214 20.4837C52.8592 20.4669 52.8951 20.4601 52.928 20.4601C52.9609 20.4601 52.9967 20.4669 53.0345 20.4837C53.0727 20.5007 53.1156 20.5292 53.1573 20.574L53.1588 20.5756L68.0903 36.5754L68.0918 36.577C68.1338 36.6218 68.1729 36.6815 68.2016 36.7556C68.2303 36.8297 68.2464 36.913 68.2464 36.9996C68.2464 37.0863 68.2303 37.1696 68.2016 37.2437C68.1729 37.3178 68.1338 37.3775 68.0918 37.4223L68.0903 37.4239L53.1588 53.4237C53.1169 53.4686 53.0738 53.4972 53.0353 53.5143C52.9973 53.5312 52.9612 53.538 52.928 53.538C52.8947 53.538 52.8586 53.5312 52.8206 53.5143C52.7821 53.4972 52.739 53.4686 52.6971 53.4237C52.655 53.3786 52.6158 53.3186 52.587 53.2442C52.5583 53.1698 52.5422 53.0863 52.5422 52.9994C52.5422 52.9125 52.5583 52.829 52.587 52.7546C52.6158 52.6803 52.655 52.6203 52.6971 52.5751L66.1226 38.1938L67.2374 36.9996L66.1226 35.8054L52.697 21.4239Z"
+														stroke="white"
+														stroke-width="3.5"
+														shape-rendering="crispEdges"
+													/>
+												</g>
+												<defs>
+													<filter id="filter0_d_103_4" x="0.996399" y="-0.000366211" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+														<feFlood flood-opacity="0" result="BackgroundImageFix" />
+														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+														<feOffset />
+														<feGaussianBlur stdDeviation="2.5" />
+														<feComposite in2="hardAlpha" operator="out" />
+														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_103_4" />
+														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_103_4" result="shape" />
+													</filter>
+												</defs>
+											</svg>
+										</div>
+										<h2 class="category-header__text">Development</h2>
+									</header>
+									<section class="category-items">
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="teenyicons:html5-outline" style="color: white"></span>
+											</div>
+											<span class="category-item__name">HTML 5</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="teenyicons:css3-outline" style="color: white"></span>
+											</div>
+											<span class="category-item__name">CSS 3</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="fluent:javascript-24-regular" style="color: white"></span>
+											</div>
+											<span class="category-item__name">JavaScript</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="akar-icons:sass-fill" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Sass</span>
+										</div>
+										<div class="category-item category-item--large">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="la:node-js" style="color: white"></span> +
+												<span class="iconify category-item__icon" data-icon="simple-icons:express" style="color: white"></span> +
+												<span class="iconify category-item__icon" data-icon="cib:mongodb" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Node js & Express js & mongoDB</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="bx:bxl-react" style="color: white"></span>
+											</div>
+											<span class="category-item__name">React</span>
+										</div>
+									</section>
+								</div>
+								<div class="categories__column categories__column--tools">
+									<header class="category-header">
+										<div class="category-header__icon">
+											<svg class="category-header__svg" width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<g filter="url(#filter0_d_104_9)">
+													<path
+														d="M6.28746 13.6782C4.59945 15.377 4.96017 17.7688 6.30341 19.117C6.35721 19.1691 11.7521 24.3495 19.3392 31.9759C19.4314 32.0696 19.5414 32.144 19.6624 32.1948C19.7835 32.2457 19.9135 32.2718 20.0447 32.2718C20.1759 32.2718 20.3058 32.2457 20.4269 32.1948C20.548 32.144 20.6579 32.0696 20.7502 31.9759C20.9369 31.788 21.0419 31.5333 21.0419 31.2677C21.0419 31.0021 20.9369 30.7474 20.7502 30.5595C19.6063 29.4097 18.5181 28.322 17.4857 27.2922L20.6525 24.1091C20.834 23.9202 20.9345 23.6672 20.9322 23.4046C20.9299 23.1419 20.8251 22.8908 20.6404 22.705C20.4556 22.5193 20.2057 22.414 19.9444 22.4116C19.6832 22.4094 19.4314 22.5104 19.2435 22.6928L16.0688 25.884C14.5358 24.3625 12.9979 22.8461 11.4552 21.3346L18.6596 14.0928C18.8411 13.904 18.9415 13.6509 18.9392 13.3883C18.937 13.1257 18.8322 12.8745 18.6475 12.6888C18.4627 12.503 18.2127 12.3977 17.9515 12.3955C17.6903 12.3931 17.4385 12.4941 17.2505 12.6766L10.0242 19.9403C8.55741 18.5121 7.71241 17.7007 7.69846 17.6867C7.27795 17.264 6.72591 16.074 7.69846 15.0965L17.6631 5.08026C18.0478 4.68762 19.0721 3.90837 20.1962 5.03218C20.246 5.08828 25.2781 10.8336 32.9589 18.5541C33.1468 18.7365 33.3985 18.8375 33.6598 18.8352C33.921 18.833 34.171 18.7276 34.3557 18.5419C34.5405 18.3562 34.6453 18.105 34.6475 17.8423C34.6499 17.5798 34.5494 17.3267 34.3679 17.1378C26.735 9.46738 21.7406 3.76614 21.649 3.66196C19.7916 1.79894 17.5515 2.35785 16.2541 3.66196L6.28746 13.6782Z"
+														fill="white"
+													/>
+												</g>
+												<g filter="url(#filter1_d_104_9)">
+													<path
+														d="M48.5535 50.7381C48.3667 50.5503 48.1133 50.4448 47.849 50.4448C47.5847 50.4448 47.3314 50.5503 47.1445 50.7381L43.9738 53.9233C42.9606 52.8911 41.9441 51.8621 40.9246 50.8362C40.7366 50.6538 40.485 50.5529 40.2237 50.5551C39.9624 50.5574 39.7124 50.6628 39.5278 50.8485C39.343 51.0342 39.2381 51.2854 39.2359 51.548C39.2336 51.8107 39.3341 52.0637 39.5155 52.2526C43.7855 56.5338 47.9898 60.8807 52.1268 65.2917C52.8104 65.9808 53.747 66.3594 54.7635 66.3594C55.8098 66.3594 56.8681 65.9488 57.5237 65.2877L67.4844 55.1573C68.7379 53.8972 68.8097 51.7598 67.6399 50.5799L54.2752 37.1481C54.0873 36.9656 53.8356 36.8646 53.5743 36.867C53.313 36.8692 53.0631 36.9745 52.8784 37.1603C52.6936 37.346 52.5888 37.5972 52.5866 37.8598C52.5842 38.1224 52.6847 38.3755 52.8662 38.5643L66.2308 51.9961C66.6294 52.3968 66.5537 53.2622 66.0734 53.7449L56.1107 63.8754C55.8815 64.1078 55.3614 64.3562 54.7635 64.3562C54.4207 64.3562 53.9305 64.2721 53.5597 63.8974C53.5398 63.8754 52.7048 62.98 51.2559 61.4555L58.5182 54.1556C58.6997 53.9667 58.8001 53.7137 58.7978 53.4511C58.7956 53.1885 58.6908 52.9373 58.5061 52.7515C58.3213 52.5658 58.0713 52.4605 57.8101 52.4583C57.5488 52.4559 57.2971 52.5569 57.1091 52.7394L49.8768 60.0092C48.3831 58.4485 46.8818 56.8953 45.3728 55.3496L48.5535 52.1524C48.7397 51.9647 48.8443 51.7104 48.8443 51.4453C48.8443 51.1801 48.7397 50.9258 48.5535 50.7381Z"
+														fill="white"
+													/>
+												</g>
+												<g filter="url(#filter2_d_104_9)">
+													<path
+														d="M5.283 66.1294C5.41016 66.2599 5.57041 66.353 5.7464 66.3985C5.92239 66.4441 6.10741 66.4404 6.28146 66.3878L26.2108 60.4201C26.371 60.3731 26.5164 60.2855 26.6333 60.1657L60.6925 25.6999C60.7404 25.6519 60.7643 25.5897 60.8002 25.5357L68.0863 18.2117C68.3759 17.9228 68.6058 17.579 68.7627 17.2002C68.9196 16.8216 69.0003 16.4154 69.0003 16.0052C69.0003 15.5949 68.9196 15.1888 68.7627 14.81C68.6058 14.4314 68.3759 14.0876 68.0863 13.7986L57.6532 3.31361C56.4814 2.1357 54.4347 2.1357 53.2628 3.31361L45.8113 10.8037C45.7635 10.8518 45.7376 10.9139 45.7016 10.97L11.5906 45.2596C11.4791 45.3711 11.3957 45.5078 11.3475 45.6582L5.04983 65.1198C4.99317 65.2935 4.98496 65.4794 5.02606 65.6574C5.06717 65.8353 5.15604 65.9987 5.283 66.1294ZM46.5726 12.9272L48.6432 15.0085L17.707 46.1891L14.2651 45.4038L46.5726 12.9272ZM18.9506 47.7737L50.0542 16.4269L54.909 21.3068L23.5243 52.4492H18.9506V47.7737ZM58.578 24.9967L26.2048 57.7579L25.0548 53.7474L56.318 22.7231L58.578 24.9967ZM12.9578 47.1587L16.9576 48.0721V53.4509C16.9576 53.7166 17.0626 53.9713 17.2495 54.1591C17.4363 54.3469 17.6898 54.4525 17.9541 54.4525H23.1835L24.447 58.8596L7.53103 63.9258L12.9578 47.1587ZM54.6738 4.7299C54.8854 4.52606 55.1671 4.41224 55.46 4.41224C55.7531 4.41224 56.0348 4.52606 56.2462 4.7299L66.6793 15.2169C66.7833 15.3203 66.8659 15.4435 66.9222 15.5792C66.9785 15.715 67.0074 15.8605 67.0072 16.0077C67.007 16.1547 66.9778 16.3003 66.9211 16.4358C66.8644 16.5714 66.7816 16.6943 66.6773 16.7974L59.9591 23.5524L47.9557 11.4868L54.6738 4.7299Z"
+														fill="white"
+													/>
+												</g>
+												<defs>
+													<filter
+														id="filter0_d_104_9"
+														x="0.154358"
+														y="-2.53482"
+														width="39.4932"
+														height="39.8066"
+														filterUnits="userSpaceOnUse"
+														color-interpolation-filters="sRGB"
+													>
+														<feFlood flood-opacity="0" result="BackgroundImageFix" />
+														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+														<feOffset />
+														<feGaussianBlur stdDeviation="2.5" />
+														<feComposite in2="hardAlpha" operator="out" />
+														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
+														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
+													</filter>
+													<filter
+														id="filter1_d_104_9"
+														x="34.2358"
+														y="31.8669"
+														width="39.2371"
+														height="39.4925"
+														filterUnits="userSpaceOnUse"
+														color-interpolation-filters="sRGB"
+													>
+														<feFlood flood-opacity="0" result="BackgroundImageFix" />
+														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+														<feOffset />
+														<feGaussianBlur stdDeviation="2.5" />
+														<feComposite in2="hardAlpha" operator="out" />
+														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
+														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
+													</filter>
+													<filter id="filter2_d_104_9" x="0.000305176" y="-2.56982" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+														<feFlood flood-opacity="0" result="BackgroundImageFix" />
+														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+														<feOffset />
+														<feGaussianBlur stdDeviation="2.5" />
+														<feComposite in2="hardAlpha" operator="out" />
+														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
+														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
+													</filter>
+												</defs>
+											</svg>
+										</div>
+										<h2 class="category-header__text">Tools</h2>
+									</header>
+									<section class="category-items">
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="file-icons:webpack-old" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Webpack</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="mdi:npm" style="color: white"></span>
+											</div>
+											<span class="category-item__name">npm</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="la:yarn" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Yarn</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="ph:google-chrome-logo-thin" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Chrome DevTools</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="cib:postman" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Postman</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="ph:figma-logo-thin" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Figma</span>
+										</div>
+										<div class="category-item category-item--large">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="bx:bx-git-branch" style="color: white"></span>+
+												<span class="iconify category-item__icon" data-icon="akar-icons:github-outline-fill" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Git & Github</span>
+										</div>
+									</section>
+								</div>
+								<div class="categories__column categories__column--future">
+									<header class="category-header">
+										<div class="category-header__icon">
+											<svg class="category-header__svg" width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<g filter="url(#filter0_d_103_7)">
+													<path d="M63.8827 2.77881V24.0344H44.6213V42.7475H25.176V61.3848H5V66.7788H30.256V48.0994H49.7387V29.3891H69V2.77881H63.8827Z" fill="white" />
+												</g>
+												<defs>
+													<filter id="filter0_d_103_7" x="0" y="-2.22119" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+														<feFlood flood-opacity="0" result="BackgroundImageFix" />
+														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+														<feOffset />
+														<feGaussianBlur stdDeviation="2.5" />
+														<feComposite in2="hardAlpha" operator="out" />
+														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_103_7" />
+														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_103_7" result="shape" />
+													</filter>
+												</defs>
+											</svg>
+										</div>
+										<h2 class="category-header__text">I'd love to master</h2>
+									</header>
+									<section class="category-items">
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="cib:rust" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Rust</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="cib:svelte" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Svelte</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="bx:bxl-blender" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Blender</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<img class="category-item__img-icon" src="./imgs/Threejs-logo.svg" alt="" />
+											</div>
+											<span class="category-item__name">Three.js</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="akar-icons:redux-fill" style="color: white"></span>
+											</div>
+											<span class="category-item__name">Redux</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="tabler:brand-react-native" style="color: white"></span>
+											</div>
+											<span class="category-item__name">React Native</span>
+										</div>
+										<div class="category-item">
+											<div class="category-item__icon-wrapper">
+												<span class="iconify category-item__icon" data-icon="teenyicons:typescript-outline" style="color: white"></span>
+											</div>
+											<span class="category-item__name">TypeScript</span>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section id="projects" class="section section--projects">
+						<header class="projects-header">
+							<h1 class="projects-header__text">
+								<svg class="svg-text svg-text--projects">
+									<text class="svg-text__text svg-text__text--projects" x="100" y="100">Projects</text>
+								</svg>
+							</h1>
+						</header>
+						<div class="project-cnt">
+							<div class="project-box">
+								<section class="project-visualization">
+									<div class="project-imgs-box">
+										<div class="img-box img-box--computer">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
+											/></a>
+										</div>
+										<div class="img-box img-box--phone">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
+											/></a>
+										</div>
+									</div>
+								</section>
+
+								<section class="project-content">
+									<header>
+										<h2 class="project-content__title">Weather App</h2>
+									</header>
+									<section class="project-content__description">
+										<p class="project-content__paragraph">
+											It's modern weather app created in react. You're able to search cities, add city to your collection, set specified city as a default display start, see
+											forecast for 7 days and 24 hours and even check the weather in random city in the world.
+										</p>
+										<p class="project-content__paragraph">Morefather I turned that into the PWA application.</p>
+									</section>
+									<section class="project-technologies">
+										<div class="project-technologies__icons">
+											<div class="category-items category-items--straight">
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+											</div>
+										</div>
+									</section>
+									<div class="link-box">
+										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+										></a>
+										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+										></a>
+									</div>
+								</section>
+							</div>
+						</div>
+
+						<div class="project-cnt">
+							<div class="project-box project-box--left">
+								<section class="project-visualization">
+									<div class="project-imgs-box">
+										<div class="img-box img-box--computer">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/template.jpg" alt="" class="project-img img-box__pc-img"
+											/></a>
+										</div>
+										<div class="img-box img-box--phone img-box--phone-left">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/template.jpg" alt="" class="project-img img-box__phone-img img-box__phone-img--left"
+											/></a>
+										</div>
+									</div>
+								</section>
+								<section class="project-content project-content--left">
+									<header>
+										<h2 class="project-content__title">CloserFX</h2>
+									</header>
+									<section class="project-content__description">
+										<p class="project-content__paragraph">
+											A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each
+											track.
+										</p>
+										<p class="project-content__paragraph">Create and save new playlists of recommended tracks based on your existing playlists and more.</p>
+									</section>
+									<section class="project-technologies">
+										<div class="project-technologies__icons">
+											<div class="category-items category-items--left category-items--straight">
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+											</div>
+										</div>
+									</section>
+									<div class="link-box link-box--left">
+										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+										></a>
+										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+										></a>
+									</div>
+								</section>
+							</div>
+						</div>
+
+						<div class="project-cnt">
+							<div class="project-box">
+								<section class="project-visualization">
+									<div class="project-imgs-box">
+										<div class="img-box img-box--computer">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
+											/></a>
+										</div>
+										<div class="img-box img-box--phone">
+											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+												><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
+											/></a>
+										</div>
+									</div>
+								</section>
+								<section class="project-content">
+									<header>
+										<h2 class="project-content__title">Dou Maker</h2>
+									</header>
+									<section class="project-content__description">
+										<p class="project-content__paragraph">
+											Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had. Unlike tutorials that only cover a few
+											concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing
+											Spotify's OAuth flow and fetching API data in a React app.
+										</p>
+										<p class="project-content__paragraph">By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.</p>
+									</section>
+									<section class="project-technologies">
+										<div class="project-technologies__icons">
+											<div class="category-items category-items--straight">
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+												<div class="category-item category-item--mini">
+													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+													<span class="category-item__name">Rust</span>
+												</div>
+											</div>
+										</div>
+									</section>
+									<div class="link-box">
+										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+										></a>
+										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+										></a>
+									</div>
+								</section>
+							</div>
+						</div>
+					</section>
+					<footer class="footer">
+						<div class="footer__content">
+							<div class="icons-container">
+								<a
+									href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBWdvFKhvpKkDMBwMgFcgFtrXCVlFRjVTTtzmHzGlgtCbcdcsJnVfTpWNwsjqvQmjZJJvV"
+									target="_blank"
+									class="icons-container__link"
+								>
+									<span class="iconify icons-container__icon icons-container__icon--gmail" data-icon="cib:gmail"></span>
+								</a>
+								<a href="https://www.facebook.com/jacob.chodubski" target="_blank" class="icons-container__link">
+									<span class="iconify icons-container__icon icons-container__icon--facebook" data-icon="akar-icons:facebook-fill"></span>
+								</a>
+								<a href="https://dribbble.com/KosaTV" target="_blank" class="icons-container__link">
+									<span class="iconify icons-container__icon icons-container__icon--dribbble" data-icon="akar-icons:dribbble-fill"></span>
+								</a>
+								<a href="https://codepen.io/KosaTV" target="_blank" class="icons-container__link">
+									<span class="iconify icons-container__icon icons-container__icon--codepen" data-icon="akar-icons:codepen-fill"></span>
+								</a>
+								<a href="https://github.com/KosaTV" target="_blank" class="icons-container__link">
+									<span class="iconify icons-container__icon icons-container__icon--github" data-icon="akar-icons:github-fill"></span>
+								</a>
+							</div>
+							<p class="footer__rights">
+								&copy; Website created in plain
+								<span class="iconify footer__rights--icon" data-icon="fluent:javascript-24-regular"></span>
+							</p>
+						</div>
+
+						<img class="footer__layer footer__layer--first" src="./imgs/layer-1.svg" alt="" />
+						<img class="footer__layer footer__layer--second" src="./imgs/layer-2.svg" alt="" />
+					</footer>
+				</section>
+			</div>
+			<article class="form-cnt">
+				<header class="form-cnt__header">
+					<h2>Wanna be in touch?</h2>
+					<button class="form-cnt__close" aria-label="close"><span class="iconify" data-icon="ci:close-small"></span></button>
+				</header>
+				<form action="POST" name="" data-netlify="true" class="contact-form">
+					<div class="phone-contact">
+						<figure class="profile">
+							<img
+								class="profile__img"
+								src="https://4.bp.blogspot.com/-9mtmwQIbz9U/UhNHNEk9zwI/AAAAAAAAEbM/pxb9K-SOzSE/s1600/facebook_photo_download_194639357233682.jpg"
+								alt="profile"
+							/>
+							<figcaption class="profile__name">Jacob Chodubski</figcaption>
+						</figure>
+						<div class="phone-zone">
+							<a class="phone-zone__phone-link" href="tel:+48 516 372 029"
+								><span class="iconify phone-zone__phone-icon" data-icon="carbon:phone-filled"></span
+								><span type="button" class="phone-zone__phone-button">+48 516 372 029</span></a
+							>
+						</div>
+					</div>
+					<fieldset class="input-info">
+						<div class="rows">
+							<div class="row row--double">
+								<label class="form-label" for="name">Your Name <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+								<div class="input-wrapper">
+									<input required class="form-input" placeholder=" " autocomplete="new-password" id="name" name="name" type="text" />
+									<span class="form-placeholder"
+										><span class="iconify form-placeholder__icon" data-icon="mdi-light:account"></span><span class="form-placeholder__label">Robert</span></span
+									>
+								</div>
+							</div>
+
+							<div class="row row--double">
+								<label class="form-label" for="email">Your E-mail <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+								<div class="input-wrapper">
+									<input required class="form-input" placeholder=" " autocomplete="new-password" id="email" name="email" type="email" />
+									<span class="form-placeholder"
+										><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span> <span class="form-placeholder__label">robert.smith@mail.com</span></span
+									>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<label class="form-label" for="name">Your Name <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+							<div class="input-wrapper">
+								<input required class="form-input" placeholder=" " autocomplete="new-password" id="name" name="name" type="text" />
+								<span class="form-placeholder"
+									><span class="iconify form-placeholder__icon" data-icon="mdi-light:account"></span><span class="form-placeholder__label">Robert</span></span
+								>
+							</div>
+						</div>
+
+						<div class="not-positioned">
+							<div class="row row--area">
+								<label class="form-label" for="message">Message <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+								<div class="input-wrapper">
+									<textarea placeholder=" " class="form-input form-input--textarea" autocomplete="new-password" name="message" id="message" cols="30" rows="10"></textarea>
+									<span class="form-placeholder form-placeholder--textarea"
+										><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span>
+										<span class="form-placeholder__label">Write something to me...</span></span
+									>
+								</div>
+							</div>
+
+							<div class="submit-cnt">
+								<button class="form-submit">
+									<p class="form-submit__label">Send Message</p>
+									<span class="iconify form-submit__icon" data-icon="akar-icons:send"></span>
+								</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<img class="form-cnt__img" src="./imgs/form-contact-img.svg" alt="" />
+			</article>
+		</div>
+	</body>
+</html>

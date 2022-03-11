@@ -1,0 +1,192 @@
+@use "config";
+@use "loader";
+@use "header";
+@use "menu";
+@use "home";
+@use "about";
+@use "skills";
+@use "projects";
+@use "footer";
+@use "contact";
+@use "colors" as c;
+@use "mixins" as mix;
+
+.page {
+	height: 100vh;
+	font-family: "Inter";
+	color: white;
+	background: hsl(217, 100%, 50%);
+	overflow: hidden;
+}
+
+.img-link {
+	display: block;
+}
+
+$sections: ("home", "about", "skills", "projects");
+
+.detail-sections {
+	height: 100vh;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+}
+
+.responsive-cnt {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.section {
+	position: relative;
+	min-height: 100vh;
+	z-index: 1;
+	$this: &;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+		#{$this}--skills {
+			background: linear-gradient(0, map-get(c.$main-colors, "primary") 50%, transparent);
+		}
+	}
+
+	&--home {
+		@include mix.flex(center, center);
+		flex-direction: column;
+		background: url("../imgs/bg-home.svg") no-repeat, linear-gradient(360deg, #000e2a 0%, #4f002f 100%);
+		background-size: cover;
+	}
+
+	&--skills {
+		background: linear-gradient(-45deg, map-get(c.$main-colors, "reddy"), 50%, map-get(c.$main-colors, "primary"));
+		background-size: 400%;
+		animation: animateGradient 15s 0s linear infinite;
+		overflow: hidden;
+	}
+}
+
+@keyframes goAndCome {
+	50% {
+		transform: scale(0.78);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.page {
+	position: relative;
+}
+
+.cube-box {
+	height: 100vh;
+	position: relative;
+	perspective: 1000px;
+
+	&--scroll-rotate {
+		animation: goAndCome 0.75s 0s ease forwards;
+	}
+}
+
+.cube {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: transform 1.5s 0s cubic-bezier(0.33, 0.75, 0.33, 1);
+	transform: translateZ(0) translateY(0) rotateX(0);
+
+	&__face {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+
+		&--1 {
+			top: 0;
+			left: 0;
+		}
+
+		&--2 {
+			top: 0;
+			left: 0;
+			transform: translateZ(-490px) translateY(490px) rotateX(-90deg); //default for 980px of height (1080px of monitor with no full-screen);
+			overflow: hidden;
+			background: map-get(c.$main-colors, "primary");
+		}
+	}
+}
+
+.svg-text {
+	width: 235px;
+	height: 65px;
+	margin: 3rem 0;
+	$this: &;
+
+	&--projects {
+		width: 237px;
+		height: 75px;
+	}
+
+	&__text {
+		text-transform: capitalize;
+		fill: none;
+		font-family: "Roboto";
+		stroke: #ffffff;
+		font-size: 80px;
+		letter-spacing: 4px;
+		font-weight: 700;
+		stroke-width: 1;
+		--time: 1.5s;
+		transform: scale(1) translate(-42%, -58%);
+		animation: path-anim var(--time) 5s ease-in-out forwards;
+
+		&--about {
+			stroke-dasharray: 280px;
+			stroke-dashoffset: 280px;
+		}
+
+		&--skills {
+			stroke-dasharray: 300px;
+			stroke-dashoffset: 300px;
+		}
+
+		&--projects {
+			--time: 2.5s;
+			font-size: 55px;
+			stroke-dasharray: 300px;
+			stroke-dashoffset: 300px;
+		}
+	}
+
+	@include mix.media(tablet) {
+		width: 350px;
+		height: 95px;
+
+		&--projects {
+			width: 355px;
+			height: 105px;
+		}
+
+		&__text {
+			transform: scale(1.5) translate(-28.5%, -41%);
+		}
+	}
+
+	@include mix.media(mediumPC) {
+		&--about {
+			stroke-dasharray: 500px;
+			stroke-dashoffset: 500px;
+		}
+	}
+}

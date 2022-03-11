@@ -1,0 +1,180 @@
+@mixin flex($positionY: center, $positionX: center) {
+	display: flex;
+	align-items: $positionY;
+	justify-content: $positionX;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	position: $pos;
+	display: $display;
+}
+
+@mixin hoverEffect($theme: "light", $property: background) {
+	&:hover {
+		@if ($theme == "light") {
+			#{$property}: rgba(30, 30, 30, 0.08);
+		} @else {
+			#{$property}: rgba(71, 71, 71, 0.5);
+		}
+
+		@content;
+	}
+}
+
+@mixin clickEffect($theme: "light", $property: background) {
+	&:active {
+		@if ($theme == "light") {
+			#{$property}: rgba(30, 30, 30, 0.1);
+		} @else {
+			#{$property}: rgba(71, 71, 71, 0.3);
+		}
+		@content;
+	}
+}
+
+@mixin trans($property: all, $duration: 0.35) {
+	transition: $property #{$duration}s 0s ease;
+}
+
+@mixin media($breakpoint) {
+	@if $breakpoint == mobile {
+		@media only screen and (max-width: 479px) {
+			@content;
+		}
+	} @else if $breakpoint == largeMobile {
+		@media only screen and (min-width: 480px) {
+			@content;
+		}
+	} @else if $breakpoint == tablet {
+		@media only screen and (min-width: 640px) {
+			@content;
+		}
+	} @else if $breakpoint == smallPC {
+		@media only screen and (min-width: 1024px) {
+			@content;
+		}
+	} @else if $breakpoint == mediumPC {
+		@media only screen and (min-width: 1366px) {
+			@content;
+		}
+	} @else if $breakpoint == largePC {
+		@media only screen and (min-width: 1920px) {
+			@content;
+		}
+	}
+}
+
+$distance-3d: 10;
+
+@include media(mediumPC) {
+	$distance-3d: 100;
+}
+
+@keyframes animation-appear-right {
+	0% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes animation-appear-left {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@mixin animation-appear($direction: "left", $duration: 0.5) {
+	animation: animation-appear-#{$direction} #{$duration}s 0s ease;
+}
+
+@keyframes path-anim {
+	100% {
+		stroke-dashoffset: 0px;
+	}
+}
+
+@keyframes pulse1 {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(2.2) translateZ(var(--distance-3d));
+		opacity: 0;
+	}
+}
+
+@keyframes pulse2 {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(2.2) translateZ(50px);
+		opacity: 0;
+	}
+}
+
+@keyframes slideX {
+	100% {
+		transform: translateX(0) translateZ(calc(var(--distance-3d) * 2.25));
+	}
+}
+
+@keyframes slideY {
+	100% {
+		transform: translateY(0) translateZ(var(--distance-3d));
+	}
+}
+
+@keyframes bigAppear {
+	50% {
+		transform: scale(1.4) translateZ(calc(var(--distance-3d) * 1.5));
+	}
+
+	100% {
+		transform: scale(1) translateZ(calc(var(--distance-3d) * 1.5));
+	}
+}
+
+@keyframes bigDisappear {
+	0% {
+		transform: scale(1.4) translateZ(calc(var(--distance-3d) * 1.5));
+	}
+
+	100% {
+		transform: scale(0) translateZ(calc(var(--distance-3d) * 1.5));
+	}
+}
+
+@keyframes animateGradient {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
