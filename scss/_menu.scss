@@ -40,6 +40,14 @@
 				animation: disappear 0.5s #{$i/6}s reverse forwards, slideY 0.5s #{$i/6}s forwards;
 			}
 		}
+
+		@include mix.media(tablet) {
+			@for $i from 1 through 5 {
+				#{$this}__item:nth-child(#{$i}) {
+					animation: disappear 0.5s #{2 + $i/6}s reverse forwards, slideY 0.5s #{$i/6}s forwards;
+				}
+			}
+		}
 	}
 
 	&__link {
@@ -104,4 +112,11 @@
 
 .header--opened .menu {
 	@include mix.flex;
+}
+
+.logo {
+	@include mix.media(tablet) {
+		opacity: 0;
+		animation: disappear 0.5s 6s ease-out reverse forwards;
+	}
 }

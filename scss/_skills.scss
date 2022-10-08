@@ -2,17 +2,32 @@
 @use "colors" as c;
 
 .rocket-cnt {
-	pointer-events: none;
+	position: relative;
 	margin: 0 auto;
-	width: 285px;
-	height: 290px;
+	width: 280px;
+	height: 265px;
 	overflow: hidden;
+
+	&::before {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+	}
+
+	&__frame {
+		pointer-events: none;
+	}
 }
 
 .categories {
 	max-width: 1600px;
+
 	&__column {
-		padding: 4rem 0;
+		padding: 6rem 0;
 	}
 }
 
@@ -31,6 +46,12 @@
 
 	&__svg {
 		transform: scale(0.75);
+		stroke-dasharray: 280px;
+		stroke-dashoffset: 280px;
+
+		&--animated {
+			animation: path-anim 1s 0s ease-in-out forwards;
+		}
 	}
 
 	&__text {
@@ -69,6 +90,7 @@
 	}
 
 	&__name {
+		display: block;
 		text-align: center;
 		font-size: 1.3rem;
 		margin: 0.5rem;

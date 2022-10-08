@@ -89,9 +89,9 @@ const loader = {
 		document.body.removeChild(this.loading);
 		document.addEventListener("wheel", throttle(handleDesktopPageRotate, 1000));
 		document.addEventListener("touchstart", e => (scrollingInfo.touchStartY = e.changedTouches[0].clientY));
-		document.addEventListener("touchmove", throttle(handleMobilePageRotate, 50));
+		document.addEventListener("touchmove", throttle(handleMobilePageRotate, 100));
 
-		goDownBtn.addEventListener("animationend", e => addPulsingBtn(e));
+		goDownBtn.addEventListener("animationend", addPulsingBtn);
 		this.sideLeft.removeEventListener("animationend", this.afterLoaded);
 	}
 };

@@ -1,68 +1,88 @@
 @use "mixins" as mix;
 
 .main {
-	margin-bottom: 15rem;
+	@include mix.flex;
+	flex-direction: column;
+	margin-bottom: 14rem;
+	width: 90%;
 }
 
 .hello {
+	@include mix.flex;
+	flex-direction: column;
+	height: auto;
+	transform: translateZ(50px);
+	margin: 3rem 0;
+	width: 100%;
+
 	&__header {
-		text-align: center;
 		font-size: 3rem;
-		margin: 1rem 2rem;
 
 		&--main {
-			text-align: start;
 			opacity: 0;
-			transform: translateX(-5%) translateZ(225px);
-			animation: disappear 0.5s 4.5s ease-out reverse forwards, slideX 0.5s 4.5s ease-out forwards;
+			transform: translateZ(225px);
 		}
 
 		&--second {
-			text-align: end;
+			text-align: center;
 			color: rgba(white, 0.3);
-			margin-bottom: 4rem;
 			opacity: 0;
-			transform: translateX(5%) translateZ(225px);
-			animation: disappear 0.5s 4.75s ease-out reverse forwards, slideX 0.5s 4.75s ease-out forwards;
+			transform: translateY(225px);
 		}
+
+		@include mix.media(largeMobile) {
+			font-size: 3.5rem;
+
+			&--second {
+				width: max-content;
+			}
+		}
+
+		@include mix.media(tablet) {
+			font-size: 5rem;
+			width: max-content;
+
+			&--main {
+				align-self: flex-start;
+				margin-bottom: 2rem;
+			}
+
+			&--second {
+				align-self: flex-end;
+			}
+		}
+
+		@include mix.media(smallPC) {
+			font-size: 7rem;
+		}
+
+		&--loaded {
+			animation: disappear 0.5s 6.75s ease-out reverse forwards, slideX 0.5s 6.75s ease-out forwards;
+		}
+	}
+
+	@include mix.media(largeMobile) {
+		width: 390px;
 	}
 
 	@include mix.media(tablet) {
-		&__header {
-			font-size: 5rem;
-
-			&--second {
-				margin-left: 15rem;
-			}
-		}
+		width: 580px;
+		margin: 5rem 0;
 	}
 
 	@include mix.media(smallPC) {
-		&__header {
-			font-size: 8rem;
-		}
+		width: 800px;
 	}
 }
 
 .home-desc {
 	text-align: center;
+	transform: translateZ(100px);
 
 	&__title {
 		font-size: 2rem;
 		margin: 1rem;
 		opacity: 0;
-	}
-
-	@for $i from 1 through 2 {
-		&__title:nth-child(#{$i}) {
-			animation: disappear 0.5s #{$i/4 + 5}s ease-out reverse forwards, slideY 0.75s #{$i/4 + 5}s ease-out forwards;
-		}
-	}
-
-	@include mix.media(smallPC) {
-		&__title {
-			font-size: 3rem;
-		}
 	}
 }
 
@@ -74,8 +94,12 @@
 	position: absolute;
 	width: 100%;
 	left: 0;
-	bottom: 20%;
+	bottom: 14%;
 	@include mix.flex;
+
+	@include mix.media(mediumPC) {
+		bottom: 20%;
+	}
 }
 
 .go-down {
@@ -87,7 +111,6 @@
 	color: white;
 	cursor: pointer;
 	transform: scale(0) translateZ(150px);
-	animation: bigAppear 1.2s 6s ease-in-out forwards;
 
 	&__text {
 		font-size: 3rem;
@@ -95,6 +118,10 @@
 	}
 
 	&--loaded {
+		animation: bigAppear 1.2s 1.25s ease-in-out forwards;
+	}
+
+	&--pulsing {
 		&::before,
 		&::after {
 			@include mix.pseudo;
@@ -113,7 +140,7 @@
 		}
 
 		&::after {
-			animation: pulse2 2.4s 1s infinite;
+			animation: pulse2 2.4s 0.7s infinite;
 		}
 	}
 

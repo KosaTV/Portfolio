@@ -17,6 +17,26 @@
 	color: white;
 	background: hsl(217, 100%, 50%);
 	overflow: hidden;
+	position: relative;
+}
+
+.test {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: black;
+	font-size: 45rem;
+}
+
+.animated-item {
+	opacity: 0;
+
+	@for $i from 0 through 30 {
+		&--animated-#{$i} {
+			animation: appear 0.5s #{$i/4}s cubic-bezier(0.42, 0, 0, 1.01) forwards, wave-appear 1s #{$i/4}s cubic-bezier(0.42, 0, 0, 1.01) forwards;
+		}
+	}
 }
 
 .img-link {
@@ -27,7 +47,6 @@ $sections: ("home", "about", "skills", "projects");
 
 .detail-sections {
 	height: 100vh;
-	overflow-y: auto;
 	scroll-behavior: smooth;
 }
 
@@ -38,7 +57,7 @@ $sections: ("home", "about", "skills", "projects");
 
 .section {
 	position: relative;
-	min-height: 100vh;
+	// padding: 75px 0;
 	z-index: 1;
 	$this: &;
 
@@ -50,9 +69,13 @@ $sections: ("home", "about", "skills", "projects");
 		width: 100%;
 		height: 100%;
 		z-index: -1;
+	}
 
-		#{$this}--skills {
-			background: linear-gradient(0, map-get(c.$main-colors, "primary") 50%, transparent);
+	&--about {
+		@include mix.flex(center, center);
+
+		@include mix.media(smallPC) {
+			height: 100vh;
 		}
 	}
 
@@ -64,16 +87,79 @@ $sections: ("home", "about", "skills", "projects");
 	}
 
 	&--skills {
-		background: linear-gradient(-45deg, map-get(c.$main-colors, "reddy"), 50%, map-get(c.$main-colors, "primary"));
 		background-size: 400%;
 		animation: animateGradient 15s 0s linear infinite;
 		overflow: hidden;
+		margin-bottom: 200px;
+	}
+
+	&__cnt {
+		@include mix.flex(center, space-around);
+		flex-direction: column;
+	}
+
+	&__description {
+		max-width: 600px;
+		margin-bottom: 6rem;
+		font-size: 2rem;
+		margin: 2rem 3rem;
+		font-weight: 300;
+		line-height: 1.55;
+		transform: translateY(5%) translateZ(15px);
+		opacity: 0;
+
+		&--strong {
+			font-weight: 500;
+			font-style: italic;
+		}
+
+		&--italic {
+			margin-top: 3rem;
+		}
+	}
+
+	&__picture {
+		max-width: 75%;
+		margin: 1rem;
+	}
+
+	@include mix.media(tablet) {
+		&--cnt {
+			padding-top: 100px;
+			min-width: 400px;
+		}
+	}
+
+	@include mix.media(smallPC) {
+		&__cnt {
+			flex-direction: row;
+		}
+
+		&__picture {
+			max-width: 40%;
+			margin: 3rem;
+		}
+
+		&__description {
+			margin: 0 0;
+			font-size: 2rem;
+			&--italic {
+				margin-top: 4rem;
+			}
+		}
+	}
+
+	@include mix.media(largePC) {
+		&__description {
+			font-size: 3rem;
+			max-width: 700px;
+		}
 	}
 }
 
 @keyframes goAndCome {
 	50% {
-		transform: scale(0.78);
+		transform: scale(0.7);
 	}
 
 	100% {
@@ -81,14 +167,11 @@ $sections: ("home", "about", "skills", "projects");
 	}
 }
 
-.page {
-	position: relative;
-}
-
 .cube-box {
 	height: 100vh;
+	width: 100vw;
 	position: relative;
-	perspective: 1000px;
+	perspective: 1500px;
 
 	&--scroll-rotate {
 		animation: goAndCome 0.75s 0s ease forwards;
@@ -96,33 +179,51 @@ $sections: ("home", "about", "skills", "projects");
 }
 
 .cube {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	--ease-speed: cubic-bezier(0.33, 0.75, 0.33, 1);
+	position: relative;
+	width: 100vw;
+	height: 100vh;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
-	transition: transform 1.5s 0s cubic-bezier(0.33, 0.75, 0.33, 1);
-	transform: translateZ(0) translateY(0) rotateX(0);
+	transition: transform 1s 0s var(--ease-speed);
+	transform: rotateX(0) translateZ(-50vh) translateY(0) rotateX(0);
+
+	&--rotated {
+		transform: translateZ(-50vh) translateY(0) rotateX(0.25turn);
+	}
+
+	&--false-rotated {
+		transition: none;
+		transform: translateZ(-50vh) translateY(0) rotateX(0.25turn);
+	}
+
+	&--after-rotated {
+		transition: none;
+		transform: rotateX(0) translateZ(-50vh) translateY(0) rotateX(0);
+	}
 
 	&__face {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		top: 0;
 
 		&--1 {
-			top: 0;
-			left: 0;
+			transform: rotateX(0) translateY(0) translateZ(50vh);
+		}
+
+		&--1-after-rotate {
+			opacity: 0;
+			pointer-events: none;
 		}
 
 		&--2 {
-			top: 0;
-			left: 0;
-			transform: translateZ(-490px) translateY(490px) rotateX(-90deg); //default for 980px of height (1080px of monitor with no full-screen);
-			overflow: hidden;
+			overflow: auto;
+			transform: rotateX(-90deg) translateZ(50vh);
 			background: map-get(c.$main-colors, "primary");
+		}
+
+		&--2-after-rotate {
+			transform: rotateX(0) translateZ(50vh);
 		}
 	}
 }
@@ -132,6 +233,10 @@ $sections: ("home", "about", "skills", "projects");
 	height: 65px;
 	margin: 3rem 0;
 	$this: &;
+
+	&--skills {
+		width: 230px;
+	}
 
 	&--projects {
 		width: 237px;
@@ -149,7 +254,10 @@ $sections: ("home", "about", "skills", "projects");
 		stroke-width: 1;
 		--time: 1.5s;
 		transform: scale(1) translate(-42%, -58%);
-		animation: path-anim var(--time) 5s ease-in-out forwards;
+
+		&--loaded {
+			animation: path-anim var(--time) 0.75s ease-in-out forwards;
+		}
 
 		&--about {
 			stroke-dasharray: 280px;
@@ -178,6 +286,10 @@ $sections: ("home", "about", "skills", "projects");
 			height: 105px;
 		}
 
+		&--skills {
+			width: 340px;
+		}
+
 		&__text {
 			transform: scale(1.5) translate(-28.5%, -41%);
 		}
@@ -188,5 +300,38 @@ $sections: ("home", "about", "skills", "projects");
 			stroke-dasharray: 500px;
 			stroke-dashoffset: 500px;
 		}
+	}
+}
+
+.button {
+	@include mix.flex;
+	width: max-content;
+	gap: 6px;
+	cursor: pointer;
+	padding: 2rem;
+	border-radius: 0.75rem;
+	border: 2px solid map-get(c.$main-colors, "reddy");
+	background: none;
+	color: white;
+	font-weight: 600;
+	font-size: 2rem;
+	$this: &;
+	transition: background 0.3s 0s ease, color 0.3s 0s ease;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-drag: none;
+
+	&:hover {
+		background: map-get(c.$main-colors, "reddy");
+		color: map-get(c.$main-colors, "primary");
+
+		#{$this}__icon {
+			stroke: map-get(c.$main-colors, "primary");
+		}
+	}
+
+	&__icon {
+		stroke: white;
+		transition: stroke 0.3s 0s ease;
 	}
 }

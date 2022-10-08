@@ -5,13 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Jacob Chodubski</title>
-		<meta name="description" content="Jacob Chodubski - Programming and designing" />
+		<meta name="description" content="Jacob Chodubski - Programming and creativity. I love what I do." />
 		<link rel="stylesheet" href="./css/style.css" />
-		<script defer="defer" src="./js/loader.js"></script>
-		<script defer="defer" src="./js/script.js"></script>
-		<script defer="defer" src="./js/projects.js"></script>
-		<script defer="defer" src="./js/helpers.js"></script>
 		<link rel="icon" href="./imgs/logo-red.svg" />
+		<script defer src="./js/loader.js"></script>
+		<script defer src="./js/elements.js"></script>
+		<script defer src="./js/rotate.js"></script>
+		<script defer src="./js/menu.js"></script>
+		<script defer src="./js/animations.js"></script>
+		<script defer src="./js/projects.js"></script>
+		<script defer src="./js/helpers.js"></script>
+		
 		<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 	</head>
 
@@ -19,7 +23,7 @@
 		<header class="header">
 			<nav class="nav">
 				<div class="logo">
-					<a href="index.html" class="logo__link">
+					<a href="index.html" class="logo__link" title="Logo">
 						<svg class="logo" width="101" height="40" viewBox="0 0 101 93" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path class="logo__path logo__path--first" d="M35.5 10.5L35.0094 47.5C36 87 72.232 93.4606 90 66" stroke="white" stroke-width="20" stroke-linecap="round" />
 							<path class="logo__path logo__path--second" d="M10.5 82C65.7722 92.515 -6 -12.5 90 15" stroke="#FF0066" stroke-width="20" stroke-linecap="round" />
@@ -33,22 +37,22 @@
 				</button>
 				<ul class="menu">
 					<li class="menu__item">
-						<a href="#" class="menu__link">
+						<a href="#" data-side="cube-1" class="menu__link">
 							<p class="text">Home</p>
 						</a>
 					</li>
 					<li class="menu__item">
-						<a href="#about" class="menu__link">
+						<a href="#about" data-side="cube-2" class="menu__link">
 							<p class="text">About</p>
 						</a>
 					</li>
 					<li class="menu__item">
-						<a href="#skills" class="menu__link">
+						<a href="#skills" data-side="cube-2" class="menu__link">
 							<p class="text">Skills</p>
 						</a>
 					</li>
 					<li class="menu__item">
-						<a href="#projects" class="menu__link">
+						<a href="#projects" data-side="cube-2" class="menu__link">
 							<p class="text">Projects</p>
 						</a>
 					</li>
@@ -63,635 +67,597 @@
 
 		<div class="cube-box">
 			<div class="cube">
-				<section class="cube__face cube__face--1 section section--home">
+				<section class="side back cube__face cube__face--1 section section--home">
 					<main class="main">
 						<header class="hello">
-							<h1 class="hello__header hello__header--main">Namaste !</h1>
-							<h1 class="hello__header hello__header--second">I'm Jacob Chodubski</h1>
+							<h1 data-animation-delay="1" class="hello-animated hello__header hello__header--main">Namaste !</h1>
+							<h1 data-animation-delay="2" class="hello-animated hello__header hello__header--second">I'm Jacob Chodubski</h1>
 						</header>
 						<section class="home-desc">
-							<p class="home-desc__title">I design & code</p>
-							<p class="home-desc__title"><span class="strong">user interfaces</span>,<span class="strong">web applications</span> and <span class="strong">more</span></p>
+							<p data-animation-delay="3" class="hello-animated home-desc__title">I design && code</p>
+							<p data-animation-delay="4" class="hello-animated home-desc__title">
+								<span class="strong">user interfaces</span>, <span class="strong">web applications</span> and <span class="strong">more</span>
+							</p>
 						</section>
-						<div class="scroll-down-cnt">
-							<button aria-label="scroll-down" class="go-down"><span class="go-down__text iconify-inline" data-icon="ep:d-arrow-right"></span></button>
-						</div>
 					</main>
+					<div class="scroll-down-cnt">
+						<button aria-label="scroll-down" class="go-down"><span class="go-down__text iconify-inline" data-icon="ep:d-arrow-right"></span></button>
+					</div>
 				</section>
 
-				<section class="cube__face cube__face--2 detail-sections">
-					<section id="about" class="section section--about">
-						<canvas class="pattern-canvas"></canvas>
-						<div class="section__cnt">
-							<div class="about-description">
-								<header class="about-header">
-									<h1 class="about-header__text">
-										<svg class="svg-text svg-text--about">
-											<text class="svg-text__text svg-text__text--about" x="100" y="100">about</text>
+				<section class="side bottom cube__face cube__face--2 detail-sections">
+						<section id="about" class="section section--about">
+							<div class="section__cnt">
+								<div class="about-description">
+									<header class="about-header">
+										<h1 class="about-header__text">
+											<svg class="svg-text svg-text--about">
+												<text class="svg-text__text svg-text__text--about" x="100" y="100">about</text>
+											</svg>
+										</h1>
+									</header>
+									<p data-animation-delay="8" class="about-animated animated-item section__description">
+										I’m an 18-year-old person, who likes programming and a little design. Although I’m pretty familiar with using different libraries and react framework, my
+										websites are primarily hand-coded using HTML5, CSS3, SVG & Vanilla JavaScript, unlike web applications.
+									</p>
+									<p data-animation-delay="9" class="about-animated animated-item section__description section__description--strong section__description--italic">
+										Following popular documentations and experienced programmers, I’m driven to achieve my goal and save browser support, with emphasis on performance. Always
+										curious about new technologies and keep learning about them.
+									</p>
+									<div class="about-description__options">
+										<a href="https://drive.google.com/uc?export=download&id=1INmHU4tY6E6WpgHJy4sajwVj9ZScFH9x" data-animation-delay="10" download class="button download-resume-btn about-animated animated-item">Get resume 
+											<svg class="button__icon" width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M18.5 14.5H18V15V17.5H17.5V11H21V11.5H18.5H18V12V13.5V14H18.5H20.25V14.5H18.5ZM11.25 16.5V17H11.75L13.25 17L13.2505 17C13.5818 16.9997 13.8994 16.8679 14.1337 16.6337C14.3679 16.3994 14.4997 16.0818 14.5 15.7505V15.75V12.75V12.7495C14.4997 12.4182 14.3679 12.1006 14.1337 11.8663C13.8994 11.6321 13.5818 11.5003 13.2505 11.5H13.25H11.75H11.25V12V16.5ZM4 11H7.24972C7.51491 11.0003 7.76915 11.1058 7.95667 11.2933C8.14415 11.4808 8.24963 11.735 8.25 12.0001C8.25 12.0002 8.25 12.0004 8.25 12.0005V14.2493C8.25 14.2493 8.25 14.2494 8.25 14.2495C8.24953 14.5147 8.14397 14.7689 7.95645 14.9564C7.76893 15.144 7.51473 15.2495 7.24954 15.25C7.24945 15.25 7.24935 15.25 7.24925 15.25L5 15.25H4.5V15.75V17.5H4V11ZM4.5 14.25V14.75H5H7.25075H7.75092L7.75075 14.2498L7.75 11.9998L7.74983 11.5H7.25H5H4.5V12V14.25ZM13.2495 17.5L10.75 17.5V11H13.2497C13.7138 11.0005 14.1586 11.1851 14.4868 11.5132C14.815 11.8414 14.9995 12.2864 15 12.7505V15.7495C14.9995 16.2136 14.815 16.6586 14.4868 16.9868C14.1587 17.3148 13.7139 17.4994 13.25 17.5C13.25 17.5 13.25 17.5 13.2499 17.5C13.2498 17.5 13.2496 17.5 13.2495 17.5Z" />
+												<path d="M15.0002 5.98659L15 5.98659V6.00001V8.50001H14.5V7.50001V7.00001H14H9.50091C9.23575 6.99907 8.98171 6.89332 8.7942 6.70581C8.60673 6.51833 8.50098 6.26434 8.5 5.99923V1.50001V1.00001H8H2H1.5V1.50001V19.5V20H2H13.5V20.5H2C1.73478 20.5 1.48043 20.3947 1.29289 20.2071C1.10536 20.0196 1 19.7652 1 19.5V1.50083C1.00097 1.23571 1.10672 0.981702 1.2942 0.794216C1.48169 0.606731 1.73569 0.500982 2.00081 0.500011H9.5V0.500198L9.51367 0.499824C9.53995 0.499105 9.56608 0.504095 9.59024 0.514451C9.6144 0.524807 9.63603 0.540281 9.65364 0.559807L9.6623 0.569416L9.67145 0.578564L14.9214 5.82856L14.9305 5.83762L14.94 5.84621C14.9596 5.86387 14.9751 5.88557 14.9855 5.9098C14.9959 5.93404 15.0009 5.96023 15.0002 5.98659ZM9 6.00001V6.50001H9.5H13.7H14.9071L14.0536 5.64646L9.85355 1.44646L9 0.592904V1.80001V6.00001Z" />
+											</svg>
+										</a>
+									</div>
+								</div>
+								<img data-animation-delay="11" class="about-animated animated-item section__picture" src="./imgs/me.png" alt="me" />
+							</div>
+						</section>
+						<section id="skills" class="section section--skills">
+							<div class="responsive-cnt">
+								<header class="skills-header">
+									<h1 class="skills-header__text">
+										<svg class="svg-text svg-text--skills">
+											<text class="svg-text__text svg-text__text--skills" x="100" y="100">skills</text>
 										</svg>
 									</h1>
 								</header>
-								<p class="section__description">
-									I’m an 18-year-old person, who likes programming and a little design. Although I’m pretty familiar with using different libraries and react framework, my
-									websites are primarily hand-coded using HTML5, CSS3, SVG & Vanilla JavaScript, unlike web applications.
-								</p>
-								<p class="section__description section__description--strong section__description--italic">
-									Following popular documentations and experienced programmers, I’m driven to achieve my goal and save browser support, with emphasis on performance. Always
-									curious about new technologies and keep learning about them.
-								</p>
+								<div data-animation-delay="6" class="rocket-cnt animated-item">
+									<iframe class="rocket-cnt__frame" src="https://my.spline.design/rocket-f1d89778409f1d7d05c2c0f6682e62f7/" frameborder="0" width="372" height="322"></iframe>
+								</div>
+								<div class="categories">
+									<div class="categories__column categories__column--dev">
+										<header class="category-header">
+											<div class="category-header__icon">
+												<svg class="category-header__svg" width="77" height="59" viewBox="0 0 77 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														class="category-header__path"
+														d="M24.8763 47.2246L22.8544 49.2478C22.5848 49.5176 22.2748 49.6525 21.9243 49.6525C21.5738 49.6525 21.2638 49.5176 20.9942 49.2478L2.14999 30.3911C1.8804 30.1213 1.74561 29.8111 1.74561 29.4604C1.74561 29.1097 1.8804 28.7995 2.14999 28.5297L20.9942 9.67299C21.2638 9.40322 21.5738 9.26834 21.9243 9.26834C22.2748 9.26834 22.5848 9.40322 22.8544 9.67299L24.8763 11.6962C25.1459 11.966 25.2807 12.2762 25.2807 12.6269C25.2807 12.9776 25.1459 13.2879 24.8763 13.5576L8.98405 29.4604L24.8763 45.3632C25.1459 45.633 25.2807 45.9432 25.2807 46.2939C25.2807 46.6446 25.1459 46.9548 24.8763 47.2246ZM48.7753 4.04835L33.6918 56.2888C33.584 56.6395 33.375 56.9025 33.065 57.0778C32.755 57.2532 32.4382 57.2869 32.1147 57.179L29.6076 56.4911C29.2571 56.3832 28.9942 56.1741 28.819 55.8639C28.6438 55.5536 28.6101 55.2232 28.7179 54.8725L43.8014 2.63207C43.9092 2.28137 44.1181 2.01835 44.4282 1.843C44.7382 1.66765 45.055 1.63393 45.3785 1.74184L47.8856 2.42974C48.2361 2.53765 48.499 2.74672 48.6742 3.05695C48.8494 3.36718 48.8831 3.69765 48.7753 4.04835ZM75.3432 30.3911L56.499 49.2478C56.2294 49.5176 55.9194 49.6525 55.5689 49.6525C55.2184 49.6525 54.9084 49.5176 54.6388 49.2478L52.6169 47.2246C52.3473 46.9548 52.2125 46.6446 52.2125 46.2939C52.2125 45.9432 52.3473 45.633 52.6169 45.3632L68.5091 29.4604L52.6169 13.5576C52.3473 13.2879 52.2125 12.9776 52.2125 12.6269C52.2125 12.2762 52.3473 11.966 52.6169 11.6962L54.6388 9.67299C54.9084 9.40322 55.2184 9.26834 55.5689 9.26834C55.9194 9.26834 56.2294 9.40322 56.499 9.67299L75.3432 28.5297C75.6128 28.7995 75.7476 29.1097 75.7476 29.4604C75.7476 29.8111 75.6128 30.1213 75.3432 30.3911Z"
+														stroke="white"
+														stroke-width="2"
+													/>
+												</svg>
+											</div>
+											<h2 data-animation-delay="4" class="animated-item category-header__text">Development</h2>
+										</header>
+										<section class="category-items">
+											<div data-animation-delay="6" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="teenyicons:html5-outline" style="color: white"></span>
+												</div>
+												<span class="category-item__name">HTML 5</span>
+											</div>
+											<div data-animation-delay="7" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="teenyicons:css3-outline" style="color: white"></span>
+												</div>
+												<span class="category-item__name">CSS 3</span>
+											</div>
+											<div data-animation-delay="8" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="fluent:javascript-24-regular" style="color: white"></span>
+												</div>
+												<span class="category-item__name">JavaScript</span>
+											</div>
+											<div data-animation-delay="9" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="teenyicons:typescript-outline" style="color: white"></span>
+												</div>
+												<span class="category-item__name">TypeScript</span>
+											</div>
+											<div data-animation-delay="10" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="akar-icons:sass-fill" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Sass</span>
+											</div>
+											<div data-animation-delay="11" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="la:node-js" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Node js</span>
+											</div>
+											<div data-animation-delay="12" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="simple-icons:express" style="color: white"></span>
+
+												</div>
+												<span class="category-item__name">Express js</span>
+											</div>
+											<div data-animation-delay="13" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="cib:mongodb" style="color: white"></span>
+												</div>
+												<span class="category-item__name">MongoDB</span>
+											</div>
+											<div data-animation-delay="14" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="bx:bxl-react" style="color: white"></span>
+												</div>
+												<span class="category-item__name">React</span>
+											</div>
+										</section>
+									</div>
+									<div class="categories__column categories__column--tools">
+										<header class="category-header">
+											<div class="category-header__icon">
+												<svg class="category-header__svg" width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<g clip-path="url(#clip0_106_8)">
+														<mask id="path-1-inside-1_106_8" fill="white">
+															<path
+																d="M1.31219 11.4684C-0.408279 13.1909 -0.0406233 15.6163 1.32844 16.9833C1.38328 17.0361 6.88188 22.2889 14.6148 30.0219C14.7089 30.117 14.8209 30.1924 14.9443 30.2439C15.0677 30.2954 15.2002 30.322 15.3339 30.322C15.4676 30.322 15.6001 30.2954 15.7235 30.2439C15.8469 30.1924 15.9589 30.117 16.053 30.0219C16.2434 29.8314 16.3503 29.5731 16.3503 29.3038C16.3503 29.0345 16.2434 28.7762 16.053 28.5858C14.887 27.4198 13.778 26.3169 12.7258 25.2728L15.9534 22.0452C16.1384 21.8536 16.2408 21.5971 16.2385 21.3308C16.2362 21.0645 16.1294 20.8097 15.9411 20.6214C15.7528 20.4331 15.498 20.3263 15.2317 20.324C14.9654 20.3217 14.7089 20.4241 14.5173 20.6091L11.2816 23.8448C9.71912 22.3021 8.15167 20.7644 6.57922 19.2319L13.9222 11.8889C14.1072 11.6974 14.2096 11.4408 14.2072 11.1745C14.2049 10.9082 14.0981 10.6535 13.9098 10.4652C13.7215 10.2769 13.4668 10.1701 13.2005 10.1678C12.9342 10.1654 12.6776 10.2678 12.4861 10.4528L5.12078 17.8181C3.62578 16.3698 2.76453 15.5472 2.75031 15.533C2.32172 15.1044 1.75906 13.8978 2.75031 12.9066L12.9066 2.75031C13.2986 2.35219 14.3427 1.56203 15.4883 2.70156C15.5391 2.75844 20.668 8.58406 28.4964 16.4125C28.688 16.5975 28.9445 16.6999 29.2108 16.6976C29.4771 16.6952 29.7318 16.5884 29.9201 16.4001C30.1084 16.2118 30.2152 15.9571 30.2176 15.6908C30.2199 15.4245 30.1175 15.168 29.9325 14.9764C22.1528 7.19875 17.0625 1.41781 16.9691 1.31219C15.0759 -0.576875 12.7928 -0.0101563 11.4705 1.31219L1.31219 11.4684V11.4684ZM44.3909 49.0466C44.2005 48.8562 43.9422 48.7492 43.6729 48.7492C43.4036 48.7492 43.1453 48.8562 42.9548 49.0466L39.7231 52.2763C38.6904 51.2297 37.6545 50.1863 36.6153 49.1461C36.4238 48.9611 36.1672 48.8587 35.9009 48.861C35.6346 48.8634 35.3799 48.9702 35.1916 49.1585C35.0033 49.3468 34.8965 49.6015 34.8942 49.8678C34.8918 50.1341 34.9942 50.3907 35.1792 50.5822C39.5312 54.9233 43.8163 59.3309 48.033 63.8036C48.7297 64.5024 49.6844 64.8863 50.7203 64.8863C51.7867 64.8863 52.8653 64.4699 53.5336 63.7995L63.6858 53.5275C64.9634 52.2499 65.0365 50.0825 63.8442 48.8861L50.2226 35.2666C50.0311 35.0816 49.7745 34.9792 49.5083 34.9815C49.242 34.9838 48.9872 35.0906 48.7989 35.2789C48.6106 35.4672 48.5038 35.722 48.5015 35.9883C48.4992 36.2546 48.6015 36.5111 48.7866 36.7027L62.4081 50.3222C62.8144 50.7284 62.7372 51.6059 62.2476 52.0955L52.0934 62.3675C51.8598 62.6031 51.3297 62.855 50.7203 62.855C50.3709 62.855 49.8712 62.7697 49.4934 62.3899C49.4731 62.3675 48.622 61.4595 47.1453 59.9138L54.5472 52.5119C54.7322 52.3203 54.8346 52.0638 54.8322 51.7975C54.8299 51.5312 54.7231 51.2765 54.5348 51.0882C54.3465 50.8999 54.0918 50.793 53.8255 50.7907C53.5592 50.7884 53.3026 50.8908 53.1111 51.0758L45.7397 58.4472C44.2173 56.8648 42.687 55.2898 41.1491 53.7225L44.3909 50.4806C44.5807 50.2903 44.6873 50.0324 44.6873 49.7636C44.6873 49.4948 44.5807 49.2369 44.3909 49.0466V49.0466ZM0.288439 64.6527C0.418047 64.785 0.581373 64.8794 0.760744 64.9255C0.940114 64.9717 1.1287 64.968 1.3061 64.9147L21.6186 58.8636C21.7818 58.8158 21.9301 58.727 22.0492 58.6056L56.7633 23.658C56.812 23.6092 56.8364 23.5463 56.873 23.4914L64.2992 16.0652C64.5944 15.7721 64.8287 15.4236 64.9886 15.0396C65.1485 14.6556 65.2308 14.2437 65.2308 13.8277C65.2308 13.4118 65.1485 12.9999 64.9886 12.6159C64.8287 12.2319 64.5944 11.8834 64.2992 11.5903L53.6656 0.95875C52.4712 -0.235625 50.3851 -0.235625 49.1908 0.95875L41.5959 8.5536C41.5472 8.60235 41.5208 8.66531 41.4842 8.72219L6.71734 43.4911C6.6037 43.6042 6.51873 43.7428 6.46953 43.8953L0.050783 63.6289C-0.00696214 63.805 -0.01534 63.9935 0.0265602 64.174C0.0684603 64.3545 0.159035 64.5201 0.288439 64.6527V64.6527ZM42.3719 10.7067L44.4823 12.8172L12.9512 44.4336L9.44328 43.6374L42.3719 10.7067ZM14.2187 46.0403L45.9205 14.2553L50.8686 19.2034L18.8805 50.7813H14.2187V46.0403ZM54.6081 22.945L21.6125 56.1641L20.4405 52.0975L52.3047 20.6395L54.6081 22.945V22.945ZM8.11078 45.4167L12.1875 46.343V51.7969C12.1875 52.0662 12.2945 52.3246 12.485 52.515C12.6754 52.7055 12.9338 52.8125 13.2031 52.8125H18.5331L19.8209 57.2813L2.57969 62.4183L8.11078 45.4167V45.4167ZM50.6289 2.39484C50.8445 2.18814 51.1316 2.07274 51.4302 2.07274C51.7289 2.07274 52.016 2.18814 52.2316 2.39484L62.8651 13.0284C62.9712 13.1333 63.0554 13.2581 63.1127 13.3958C63.1701 13.5334 63.1996 13.6811 63.1994 13.8302C63.1992 13.9793 63.1694 14.1269 63.1116 14.2644C63.0539 14.4019 62.9694 14.5265 62.8631 14.6311L56.0158 21.4805L43.7816 9.24625L50.6289 2.39484V2.39484Z"
+															/>
+														</mask>
+														<path
+															d="M1.31219 11.4684C-0.408279 13.1909 -0.0406233 15.6163 1.32844 16.9833C1.38328 17.0361 6.88188 22.2889 14.6148 30.0219C14.7089 30.117 14.8209 30.1924 14.9443 30.2439C15.0677 30.2954 15.2002 30.322 15.3339 30.322C15.4676 30.322 15.6001 30.2954 15.7235 30.2439C15.8469 30.1924 15.9589 30.117 16.053 30.0219C16.2434 29.8314 16.3503 29.5731 16.3503 29.3038C16.3503 29.0345 16.2434 28.7762 16.053 28.5858C14.887 27.4198 13.778 26.3169 12.7258 25.2728L15.9534 22.0452C16.1384 21.8536 16.2408 21.5971 16.2385 21.3308C16.2362 21.0645 16.1294 20.8097 15.9411 20.6214C15.7528 20.4331 15.498 20.3263 15.2317 20.324C14.9654 20.3217 14.7089 20.4241 14.5173 20.6091L11.2816 23.8448C9.71912 22.3021 8.15167 20.7644 6.57922 19.2319L13.9222 11.8889C14.1072 11.6974 14.2096 11.4408 14.2072 11.1745C14.2049 10.9082 14.0981 10.6535 13.9098 10.4652C13.7215 10.2769 13.4668 10.1701 13.2005 10.1678C12.9342 10.1654 12.6776 10.2678 12.4861 10.4528L5.12078 17.8181C3.62578 16.3698 2.76453 15.5472 2.75031 15.533C2.32172 15.1044 1.75906 13.8978 2.75031 12.9066L12.9066 2.75031C13.2986 2.35219 14.3427 1.56203 15.4883 2.70156C15.5391 2.75844 20.668 8.58406 28.4964 16.4125C28.688 16.5975 28.9445 16.6999 29.2108 16.6976C29.4771 16.6952 29.7318 16.5884 29.9201 16.4001C30.1084 16.2118 30.2152 15.9571 30.2176 15.6908C30.2199 15.4245 30.1175 15.168 29.9325 14.9764C22.1528 7.19875 17.0625 1.41781 16.9691 1.31219C15.0759 -0.576875 12.7928 -0.0101563 11.4705 1.31219L1.31219 11.4684V11.4684ZM44.3909 49.0466C44.2005 48.8562 43.9422 48.7492 43.6729 48.7492C43.4036 48.7492 43.1453 48.8562 42.9548 49.0466L39.7231 52.2763C38.6904 51.2297 37.6545 50.1863 36.6153 49.1461C36.4238 48.9611 36.1672 48.8587 35.9009 48.861C35.6346 48.8634 35.3799 48.9702 35.1916 49.1585C35.0033 49.3468 34.8965 49.6015 34.8942 49.8678C34.8918 50.1341 34.9942 50.3907 35.1792 50.5822C39.5312 54.9233 43.8163 59.3309 48.033 63.8036C48.7297 64.5024 49.6844 64.8863 50.7203 64.8863C51.7867 64.8863 52.8653 64.4699 53.5336 63.7995L63.6858 53.5275C64.9634 52.2499 65.0365 50.0825 63.8442 48.8861L50.2226 35.2666C50.0311 35.0816 49.7745 34.9792 49.5083 34.9815C49.242 34.9838 48.9872 35.0906 48.7989 35.2789C48.6106 35.4672 48.5038 35.722 48.5015 35.9883C48.4992 36.2546 48.6015 36.5111 48.7866 36.7027L62.4081 50.3222C62.8144 50.7284 62.7372 51.6059 62.2476 52.0955L52.0934 62.3675C51.8598 62.6031 51.3297 62.855 50.7203 62.855C50.3709 62.855 49.8712 62.7697 49.4934 62.3899C49.4731 62.3675 48.622 61.4595 47.1453 59.9138L54.5472 52.5119C54.7322 52.3203 54.8346 52.0638 54.8322 51.7975C54.8299 51.5312 54.7231 51.2765 54.5348 51.0882C54.3465 50.8999 54.0918 50.793 53.8255 50.7907C53.5592 50.7884 53.3026 50.8908 53.1111 51.0758L45.7397 58.4472C44.2173 56.8648 42.687 55.2898 41.1491 53.7225L44.3909 50.4806C44.5807 50.2903 44.6873 50.0324 44.6873 49.7636C44.6873 49.4948 44.5807 49.2369 44.3909 49.0466V49.0466ZM0.288439 64.6527C0.418047 64.785 0.581373 64.8794 0.760744 64.9255C0.940114 64.9717 1.1287 64.968 1.3061 64.9147L21.6186 58.8636C21.7818 58.8158 21.9301 58.727 22.0492 58.6056L56.7633 23.658C56.812 23.6092 56.8364 23.5463 56.873 23.4914L64.2992 16.0652C64.5944 15.7721 64.8287 15.4236 64.9886 15.0396C65.1485 14.6556 65.2308 14.2437 65.2308 13.8277C65.2308 13.4118 65.1485 12.9999 64.9886 12.6159C64.8287 12.2319 64.5944 11.8834 64.2992 11.5903L53.6656 0.95875C52.4712 -0.235625 50.3851 -0.235625 49.1908 0.95875L41.5959 8.5536C41.5472 8.60235 41.5208 8.66531 41.4842 8.72219L6.71734 43.4911C6.6037 43.6042 6.51873 43.7428 6.46953 43.8953L0.050783 63.6289C-0.00696214 63.805 -0.01534 63.9935 0.0265602 64.174C0.0684603 64.3545 0.159035 64.5201 0.288439 64.6527V64.6527ZM42.3719 10.7067L44.4823 12.8172L12.9512 44.4336L9.44328 43.6374L42.3719 10.7067ZM14.2187 46.0403L45.9205 14.2553L50.8686 19.2034L18.8805 50.7813H14.2187V46.0403ZM54.6081 22.945L21.6125 56.1641L20.4405 52.0975L52.3047 20.6395L54.6081 22.945V22.945ZM8.11078 45.4167L12.1875 46.343V51.7969C12.1875 52.0662 12.2945 52.3246 12.485 52.515C12.6754 52.7055 12.9338 52.8125 13.2031 52.8125H18.5331L19.8209 57.2813L2.57969 62.4183L8.11078 45.4167V45.4167ZM50.6289 2.39484C50.8445 2.18814 51.1316 2.07274 51.4302 2.07274C51.7289 2.07274 52.016 2.18814 52.2316 2.39484L62.8651 13.0284C62.9712 13.1333 63.0554 13.2581 63.1127 13.3958C63.1701 13.5334 63.1996 13.6811 63.1994 13.8302C63.1992 13.9793 63.1694 14.1269 63.1116 14.2644C63.0539 14.4019 62.9694 14.5265 62.8631 14.6311L56.0158 21.4805L43.7816 9.24625L50.6289 2.39484V2.39484Z"
+															stroke="white"
+															stroke-width="4"
+															mask="url(#path-1-inside-1_106_8)"
+														/>
+													</g>
+													<defs>
+														<clipPath id="clip0_106_8">
+															<rect width="64.7359" height="65" fill="white" />
+														</clipPath>
+													</defs>
+												</svg>
+											</div>
+											<h2 data-animation-delay="4" class="animated-item category-header__text">Tools</h2>
+										</header>
+										<section class="category-items">
+											<div data-animation-delay="6" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="file-icons:webpack-old" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Webpack</span>
+											</div>
+											<div data-animation-delay="7" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="mdi:npm" style="color: white"></span>
+												</div>
+												<span class="category-item__name">npm</span>
+											</div>
+											<div data-animation-delay="8" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="la:yarn" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Yarn</span>
+											</div>
+											<div data-animation-delay="9" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="ph:google-chrome-logo-thin" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Chrome DevTools</span>
+											</div>
+											<div data-animation-delay="10" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="cib:postman" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Postman</span>
+											</div>
+											<div data-animation-delay="11" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="ph:figma-logo-thin" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Figma</span>
+											</div>
+											<div data-animation-delay="12" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="bx:bx-git-branch" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Git</span>
+											</div>
+											<div data-animation-delay="13" class="animated-item category-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="akar-icons:github-outline-fill" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Github</span>
+											</div>
+										</section>
+									</div>
+									<div class="categories__column categories__column--future">
+										<header class="category-header">
+											<div class="category-header__icon">
+												<svg class="category-header__svg" width="74" height="73" viewBox="0 0 74 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														class="category-header__path"
+														d="M63.8827 2.0506H62.8827V3.0506V23.3062H44.6213H43.6213V24.3062V42.0193H25.176H24.176V43.0193V60.6566H5H4V61.6566V67.0506V68.0506H5H30.256H31.256V67.0506V49.3712H49.7387H50.7387V48.3712V30.6609H69H70V29.6609V3.0506V2.0506H69H63.8827Z"
+														stroke="white"
+														stroke-width="2"
+													/>
+												</svg>
+											</div>
+											<h2 data-animation-delay="4" class="animated-item category-header__text">I'd love to know</h2>
+										</header>
+										<section class="category-items">
+											<div data-animation-delay="6" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="cib:rust" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Rust</span>
+											</div>
+											<div data-animation-delay="7" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="cib:svelte" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Svelte</span>
+											</div>
+											<div data-animation-delay="8" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="bx:bxl-blender" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Blender</span>
+											</div>
+											<div data-animation-delay="9" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<img class="category-item__img-icon" src="./imgs/Threejs-logo.svg" alt="" />
+												</div>
+												<span class="category-item__name">WebGL (Three.js)</span>
+											</div>
+											<div data-animation-delay="10" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="akar-icons:redux-fill" style="color: white"></span>
+												</div>
+												<span class="category-item__name">Redux</span>
+											</div>
+											<div data-animation-delay="11" class="animated-item category-item">
+												<div class="category-item__icon-wrapper">
+													<span class="iconify category-item__icon" data-icon="tabler:brand-react-native" style="color: white"></span>
+												</div>
+												<span class="category-item__name">React Native</span>
+											</div>
+										</section>
+									</div>
+								</div>
 							</div>
-							<img class="section__picture" src="./imgs/me.png" alt="me" />
-						</div>
-					</section>
-					<section id="skills" class="section section--skills">
-						<div class="responsive-cnt">
-							<div class="rocket-cnt">
-								<iframe src="https://my.spline.design/rocket-f1d89778409f1d7d05c2c0f6682e62f7/" frameborder="0" width="372" height="322"></iframe>
-							</div>
-							<header class="skills-header">
-								<h1 class="skills-header__text">
-									<svg class="svg-text svg-text--about">
-										<text class="svg-text__text svg-text__text--skills" x="100" y="100">skills</text>
+						</section>
+						<section id="projects" class="section section--projects">
+							<header class="projects-header">
+								<h1 class="projects-header__text">
+									<svg class="svg-text svg-text--projects">
+										<text class="svg-text__text svg-text__text--projects" x="100" y="100">Projects</text>
 									</svg>
 								</h1>
 							</header>
-							<div class="categories">
-								<div class="categories__column categories__column--dev">
-									<header class="category-header">
-										<div class="category-header__icon">
-											<svg class="category-header__svg" width="75" height="74" viewBox="0 0 75 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g filter="url(#filter0_d_103_4)">
-													<path
-														d="M46.1715 7.09675L46.1716 7.09651C46.1943 7.01739 46.2295 6.95051 46.27 6.898C46.3104 6.84571 46.354 6.81014 46.3939 6.78747C46.4335 6.765 46.4709 6.75425 46.5043 6.75087C46.5375 6.74751 46.5722 6.75086 46.6081 6.76271C46.6444 6.77467 46.6859 6.79665 46.7278 6.83378C46.7699 6.87117 46.8117 6.92332 46.8453 6.99119C46.8789 7.0592 46.9019 7.13853 46.9095 7.22432C46.9171 7.31004 46.9086 7.3956 46.8859 7.47474C46.8859 7.47482 46.8859 7.4749 46.8858 7.47497L29.8213 66.9025L29.8212 66.9028C29.7744 67.0659 29.6797 67.166 29.5989 67.2118C29.5237 67.2545 29.4512 67.2585 29.3847 67.2366C29.3133 67.2131 29.216 67.1467 29.1475 67.0081C29.0777 66.8668 29.0597 66.6892 29.1069 66.5245C29.1069 66.5244 29.1069 66.5244 29.107 66.5243L46.1715 7.09675ZM23.2972 21.4225L23.2958 21.4239L9.87024 35.8054L8.75543 36.9996L9.87024 38.1938L23.2957 52.5751C23.2957 52.5752 23.2958 52.5753 23.2958 52.5753C23.3827 52.6686 23.4506 52.8192 23.4506 52.9994C23.4506 53.1798 23.3826 53.3305 23.2957 53.4237C23.2125 53.5128 23.1266 53.538 23.0648 53.538C23.0031 53.538 22.9172 53.5128 22.834 53.4237L7.90248 37.4239L7.90097 37.4223C7.85903 37.3775 7.81987 37.3177 7.7912 37.2437C7.76248 37.1695 7.7464 37.0863 7.7464 36.9996C7.7464 36.913 7.76248 36.8297 7.7912 36.7556C7.81987 36.6815 7.85903 36.6218 7.90098 36.577L7.90248 36.5754L22.834 20.5756L22.8355 20.574C22.8772 20.5292 22.9201 20.5007 22.9583 20.4837C22.9961 20.4669 23.0319 20.4601 23.0648 20.4601C23.0977 20.4601 23.1336 20.4669 23.1714 20.4837C23.2096 20.5007 23.2525 20.5292 23.2941 20.574L23.2972 20.5772C23.3391 20.622 23.3783 20.6817 23.4069 20.7558C23.4357 20.8299 23.4517 20.9132 23.4517 20.9998C23.4517 21.0865 23.4357 21.1698 23.4069 21.2439C23.3783 21.318 23.3391 21.3777 23.2972 21.4225ZM52.697 21.4239L52.6956 21.4225C52.6537 21.3777 52.6145 21.318 52.5859 21.2439C52.5571 21.1698 52.5411 21.0865 52.5411 20.9998C52.5411 20.9132 52.5571 20.8299 52.5859 20.7558C52.6145 20.6817 52.6537 20.622 52.6956 20.5772L52.6987 20.574C52.7403 20.5292 52.7832 20.5007 52.8214 20.4837C52.8592 20.4669 52.8951 20.4601 52.928 20.4601C52.9609 20.4601 52.9967 20.4669 53.0345 20.4837C53.0727 20.5007 53.1156 20.5292 53.1573 20.574L53.1588 20.5756L68.0903 36.5754L68.0918 36.577C68.1338 36.6218 68.1729 36.6815 68.2016 36.7556C68.2303 36.8297 68.2464 36.913 68.2464 36.9996C68.2464 37.0863 68.2303 37.1696 68.2016 37.2437C68.1729 37.3178 68.1338 37.3775 68.0918 37.4223L68.0903 37.4239L53.1588 53.4237C53.1169 53.4686 53.0738 53.4972 53.0353 53.5143C52.9973 53.5312 52.9612 53.538 52.928 53.538C52.8947 53.538 52.8586 53.5312 52.8206 53.5143C52.7821 53.4972 52.739 53.4686 52.6971 53.4237C52.655 53.3786 52.6158 53.3186 52.587 53.2442C52.5583 53.1698 52.5422 53.0863 52.5422 52.9994C52.5422 52.9125 52.5583 52.829 52.587 52.7546C52.6158 52.6803 52.655 52.6203 52.6971 52.5751L66.1226 38.1938L67.2374 36.9996L66.1226 35.8054L52.697 21.4239Z"
-														stroke="white"
-														stroke-width="3.5"
-														shape-rendering="crispEdges"
-													/>
-												</g>
-												<defs>
-													<filter id="filter0_d_103_4" x="0.996399" y="-0.000366211" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-														<feFlood flood-opacity="0" result="BackgroundImageFix" />
-														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-														<feOffset />
-														<feGaussianBlur stdDeviation="2.5" />
-														<feComposite in2="hardAlpha" operator="out" />
-														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_103_4" />
-														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_103_4" result="shape" />
-													</filter>
-												</defs>
-											</svg>
-										</div>
-										<h2 class="category-header__text">Development</h2>
-									</header>
-									<section class="category-items">
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="teenyicons:html5-outline" style="color: white"></span>
+							<div class="project-cnt">
+								<div class="project-box">
+									<section class="project-visualization">
+										<div class="project-imgs-box">
+											<div data-animation-delay="0" class="animated-item img-box img-box--computer">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
+												/></a>
 											</div>
-											<span class="category-item__name">HTML 5</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="teenyicons:css3-outline" style="color: white"></span>
+											<div data-animation-delay="1" class="animated-item img-box img-box--phone">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
+												/></a>
 											</div>
-											<span class="category-item__name">CSS 3</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="fluent:javascript-24-regular" style="color: white"></span>
-											</div>
-											<span class="category-item__name">JavaScript</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="akar-icons:sass-fill" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Sass</span>
-										</div>
-										<div class="category-item category-item--large">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="la:node-js" style="color: white"></span> +
-												<span class="iconify category-item__icon" data-icon="simple-icons:express" style="color: white"></span> +
-												<span class="iconify category-item__icon" data-icon="cib:mongodb" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Node js & Express js & mongoDB</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="bx:bxl-react" style="color: white"></span>
-											</div>
-											<span class="category-item__name">React</span>
 										</div>
 									</section>
-								</div>
-								<div class="categories__column categories__column--tools">
-									<header class="category-header">
-										<div class="category-header__icon">
-											<svg class="category-header__svg" width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g filter="url(#filter0_d_104_9)">
-													<path
-														d="M6.28746 13.6782C4.59945 15.377 4.96017 17.7688 6.30341 19.117C6.35721 19.1691 11.7521 24.3495 19.3392 31.9759C19.4314 32.0696 19.5414 32.144 19.6624 32.1948C19.7835 32.2457 19.9135 32.2718 20.0447 32.2718C20.1759 32.2718 20.3058 32.2457 20.4269 32.1948C20.548 32.144 20.6579 32.0696 20.7502 31.9759C20.9369 31.788 21.0419 31.5333 21.0419 31.2677C21.0419 31.0021 20.9369 30.7474 20.7502 30.5595C19.6063 29.4097 18.5181 28.322 17.4857 27.2922L20.6525 24.1091C20.834 23.9202 20.9345 23.6672 20.9322 23.4046C20.9299 23.1419 20.8251 22.8908 20.6404 22.705C20.4556 22.5193 20.2057 22.414 19.9444 22.4116C19.6832 22.4094 19.4314 22.5104 19.2435 22.6928L16.0688 25.884C14.5358 24.3625 12.9979 22.8461 11.4552 21.3346L18.6596 14.0928C18.8411 13.904 18.9415 13.6509 18.9392 13.3883C18.937 13.1257 18.8322 12.8745 18.6475 12.6888C18.4627 12.503 18.2127 12.3977 17.9515 12.3955C17.6903 12.3931 17.4385 12.4941 17.2505 12.6766L10.0242 19.9403C8.55741 18.5121 7.71241 17.7007 7.69846 17.6867C7.27795 17.264 6.72591 16.074 7.69846 15.0965L17.6631 5.08026C18.0478 4.68762 19.0721 3.90837 20.1962 5.03218C20.246 5.08828 25.2781 10.8336 32.9589 18.5541C33.1468 18.7365 33.3985 18.8375 33.6598 18.8352C33.921 18.833 34.171 18.7276 34.3557 18.5419C34.5405 18.3562 34.6453 18.105 34.6475 17.8423C34.6499 17.5798 34.5494 17.3267 34.3679 17.1378C26.735 9.46738 21.7406 3.76614 21.649 3.66196C19.7916 1.79894 17.5515 2.35785 16.2541 3.66196L6.28746 13.6782Z"
-														fill="white"
-													/>
-												</g>
-												<g filter="url(#filter1_d_104_9)">
-													<path
-														d="M48.5535 50.7381C48.3667 50.5503 48.1133 50.4448 47.849 50.4448C47.5847 50.4448 47.3314 50.5503 47.1445 50.7381L43.9738 53.9233C42.9606 52.8911 41.9441 51.8621 40.9246 50.8362C40.7366 50.6538 40.485 50.5529 40.2237 50.5551C39.9624 50.5574 39.7124 50.6628 39.5278 50.8485C39.343 51.0342 39.2381 51.2854 39.2359 51.548C39.2336 51.8107 39.3341 52.0637 39.5155 52.2526C43.7855 56.5338 47.9898 60.8807 52.1268 65.2917C52.8104 65.9808 53.747 66.3594 54.7635 66.3594C55.8098 66.3594 56.8681 65.9488 57.5237 65.2877L67.4844 55.1573C68.7379 53.8972 68.8097 51.7598 67.6399 50.5799L54.2752 37.1481C54.0873 36.9656 53.8356 36.8646 53.5743 36.867C53.313 36.8692 53.0631 36.9745 52.8784 37.1603C52.6936 37.346 52.5888 37.5972 52.5866 37.8598C52.5842 38.1224 52.6847 38.3755 52.8662 38.5643L66.2308 51.9961C66.6294 52.3968 66.5537 53.2622 66.0734 53.7449L56.1107 63.8754C55.8815 64.1078 55.3614 64.3562 54.7635 64.3562C54.4207 64.3562 53.9305 64.2721 53.5597 63.8974C53.5398 63.8754 52.7048 62.98 51.2559 61.4555L58.5182 54.1556C58.6997 53.9667 58.8001 53.7137 58.7978 53.4511C58.7956 53.1885 58.6908 52.9373 58.5061 52.7515C58.3213 52.5658 58.0713 52.4605 57.8101 52.4583C57.5488 52.4559 57.2971 52.5569 57.1091 52.7394L49.8768 60.0092C48.3831 58.4485 46.8818 56.8953 45.3728 55.3496L48.5535 52.1524C48.7397 51.9647 48.8443 51.7104 48.8443 51.4453C48.8443 51.1801 48.7397 50.9258 48.5535 50.7381Z"
-														fill="white"
-													/>
-												</g>
-												<g filter="url(#filter2_d_104_9)">
-													<path
-														d="M5.283 66.1294C5.41016 66.2599 5.57041 66.353 5.7464 66.3985C5.92239 66.4441 6.10741 66.4404 6.28146 66.3878L26.2108 60.4201C26.371 60.3731 26.5164 60.2855 26.6333 60.1657L60.6925 25.6999C60.7404 25.6519 60.7643 25.5897 60.8002 25.5357L68.0863 18.2117C68.3759 17.9228 68.6058 17.579 68.7627 17.2002C68.9196 16.8216 69.0003 16.4154 69.0003 16.0052C69.0003 15.5949 68.9196 15.1888 68.7627 14.81C68.6058 14.4314 68.3759 14.0876 68.0863 13.7986L57.6532 3.31361C56.4814 2.1357 54.4347 2.1357 53.2628 3.31361L45.8113 10.8037C45.7635 10.8518 45.7376 10.9139 45.7016 10.97L11.5906 45.2596C11.4791 45.3711 11.3957 45.5078 11.3475 45.6582L5.04983 65.1198C4.99317 65.2935 4.98496 65.4794 5.02606 65.6574C5.06717 65.8353 5.15604 65.9987 5.283 66.1294ZM46.5726 12.9272L48.6432 15.0085L17.707 46.1891L14.2651 45.4038L46.5726 12.9272ZM18.9506 47.7737L50.0542 16.4269L54.909 21.3068L23.5243 52.4492H18.9506V47.7737ZM58.578 24.9967L26.2048 57.7579L25.0548 53.7474L56.318 22.7231L58.578 24.9967ZM12.9578 47.1587L16.9576 48.0721V53.4509C16.9576 53.7166 17.0626 53.9713 17.2495 54.1591C17.4363 54.3469 17.6898 54.4525 17.9541 54.4525H23.1835L24.447 58.8596L7.53103 63.9258L12.9578 47.1587ZM54.6738 4.7299C54.8854 4.52606 55.1671 4.41224 55.46 4.41224C55.7531 4.41224 56.0348 4.52606 56.2462 4.7299L66.6793 15.2169C66.7833 15.3203 66.8659 15.4435 66.9222 15.5792C66.9785 15.715 67.0074 15.8605 67.0072 16.0077C67.007 16.1547 66.9778 16.3003 66.9211 16.4358C66.8644 16.5714 66.7816 16.6943 66.6773 16.7974L59.9591 23.5524L47.9557 11.4868L54.6738 4.7299Z"
-														fill="white"
-													/>
-												</g>
-												<defs>
-													<filter
-														id="filter0_d_104_9"
-														x="0.154358"
-														y="-2.53482"
-														width="39.4932"
-														height="39.8066"
-														filterUnits="userSpaceOnUse"
-														color-interpolation-filters="sRGB"
-													>
-														<feFlood flood-opacity="0" result="BackgroundImageFix" />
-														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-														<feOffset />
-														<feGaussianBlur stdDeviation="2.5" />
-														<feComposite in2="hardAlpha" operator="out" />
-														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
-														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
-													</filter>
-													<filter
-														id="filter1_d_104_9"
-														x="34.2358"
-														y="31.8669"
-														width="39.2371"
-														height="39.4925"
-														filterUnits="userSpaceOnUse"
-														color-interpolation-filters="sRGB"
-													>
-														<feFlood flood-opacity="0" result="BackgroundImageFix" />
-														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-														<feOffset />
-														<feGaussianBlur stdDeviation="2.5" />
-														<feComposite in2="hardAlpha" operator="out" />
-														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
-														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
-													</filter>
-													<filter id="filter2_d_104_9" x="0.000305176" y="-2.56982" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-														<feFlood flood-opacity="0" result="BackgroundImageFix" />
-														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-														<feOffset />
-														<feGaussianBlur stdDeviation="2.5" />
-														<feComposite in2="hardAlpha" operator="out" />
-														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_9" />
-														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_9" result="shape" />
-													</filter>
-												</defs>
-											</svg>
-										</div>
-										<h2 class="category-header__text">Tools</h2>
-									</header>
-									<section class="category-items">
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="file-icons:webpack-old" style="color: white"></span>
+
+									<section class="project-content">
+										<header>
+											<h2 data-animation-delay="2" class="animated-item project-content__title">Weather App</h2>
+										</header>
+										<section data-animation-delay="3" class="animated-item project-content__description">
+											<p class="project-content__paragraph">
+												It's modern weather app created in react. You're able to search cities, add city to your collection, set specified city as a default display start, see
+												forecast for 7 days and 24 hours and even check the weather in random city in the world.
+											</p>
+											<p class="project-content__paragraph">
+												Morefather I turned that into the
+												<a class="project-content__link" target="_blank" href="https://www.freecodecamp.org/news/what-are-progressive-web-apps/">PWA</a> application.
+											</p>
+										</section>
+										<section class="project-technologies">
+											<div class="project-technologies__icons">
+												<div class="category-items category-items--straight">
+													<div data-animation-delay="6" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="5" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="4" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="3" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="2" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+												</div>
 											</div>
-											<span class="category-item__name">Webpack</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="mdi:npm" style="color: white"></span>
-											</div>
-											<span class="category-item__name">npm</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="la:yarn" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Yarn</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="ph:google-chrome-logo-thin" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Chrome DevTools</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="cib:postman" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Postman</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="ph:figma-logo-thin" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Figma</span>
-										</div>
-										<div class="category-item category-item--large">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="bx:bx-git-branch" style="color: white"></span>+
-												<span class="iconify category-item__icon" data-icon="akar-icons:github-outline-fill" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Git & Github</span>
-										</div>
-									</section>
-								</div>
-								<div class="categories__column categories__column--future">
-									<header class="category-header">
-										<div class="category-header__icon">
-											<svg class="category-header__svg" width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<g filter="url(#filter0_d_103_7)">
-													<path d="M63.8827 2.77881V24.0344H44.6213V42.7475H25.176V61.3848H5V66.7788H30.256V48.0994H49.7387V29.3891H69V2.77881H63.8827Z" fill="white" />
-												</g>
-												<defs>
-													<filter id="filter0_d_103_7" x="0" y="-2.22119" width="74" height="74" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-														<feFlood flood-opacity="0" result="BackgroundImageFix" />
-														<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-														<feOffset />
-														<feGaussianBlur stdDeviation="2.5" />
-														<feComposite in2="hardAlpha" operator="out" />
-														<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-														<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_103_7" />
-														<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_103_7" result="shape" />
-													</filter>
-												</defs>
-											</svg>
-										</div>
-										<h2 class="category-header__text">I'd love to master</h2>
-									</header>
-									<section class="category-items">
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="cib:rust" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Rust</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="cib:svelte" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Svelte</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="bx:bxl-blender" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Blender</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<img class="category-item__img-icon" src="./imgs/Threejs-logo.svg" alt="" />
-											</div>
-											<span class="category-item__name">Three.js</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="akar-icons:redux-fill" style="color: white"></span>
-											</div>
-											<span class="category-item__name">Redux</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="tabler:brand-react-native" style="color: white"></span>
-											</div>
-											<span class="category-item__name">React Native</span>
-										</div>
-										<div class="category-item">
-											<div class="category-item__icon-wrapper">
-												<span class="iconify category-item__icon" data-icon="teenyicons:typescript-outline" style="color: white"></span>
-											</div>
-											<span class="category-item__name">TypeScript</span>
+										</section>
+										<div class="link-box">
+											<a data-animation-delay="8" class="animated-item link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+												><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+											></a>
+											<a data-animation-delay="7" class="animated-item link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+												><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+											></a>
 										</div>
 									</section>
 								</div>
 							</div>
-						</div>
-					</section>
-					<section id="projects" class="section section--projects">
-						<header class="projects-header">
-							<h1 class="projects-header__text">
-								<svg class="svg-text svg-text--projects">
-									<text class="svg-text__text svg-text__text--projects" x="100" y="100">Projects</text>
-								</svg>
-							</h1>
-						</header>
-						<div class="project-cnt">
-							<div class="project-box">
-								<section class="project-visualization">
-									<div class="project-imgs-box">
-										<div class="img-box img-box--computer">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
-											/></a>
-										</div>
-										<div class="img-box img-box--phone">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
-											/></a>
-										</div>
-									</div>
-								</section>
 
-								<section class="project-content">
-									<header>
-										<h2 class="project-content__title">Weather App</h2>
-									</header>
-									<section class="project-content__description">
-										<p class="project-content__paragraph">
-											It's modern weather app created in react. You're able to search cities, add city to your collection, set specified city as a default display start, see
-											forecast for 7 days and 24 hours and even check the weather in random city in the world.
-										</p>
-										<p class="project-content__paragraph">Morefather I turned that into the PWA application.</p>
-									</section>
-									<section class="project-technologies">
-										<div class="project-technologies__icons">
-											<div class="category-items category-items--straight">
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
+							<div class="project-cnt">
+								<div class="project-box project-box--left">
+									<section class="project-visualization">
+										<div class="project-imgs-box">
+											<div data-animation-delay="0" class="animated-item img-box img-box--computer">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/template.jpg" alt="" class="project-img img-box__pc-img"
+												/></a>
+											</div>
+											<div data-animation-delay="1" class="animated-item img-box img-box--phone img-box--phone-left">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/template.jpg" alt="" class="project-img img-box__phone-img img-box__phone-img--left"
+												/></a>
 											</div>
 										</div>
 									</section>
-									<div class="link-box">
-										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
-											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
-										></a>
-										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
-											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
-										></a>
-									</div>
-								</section>
-							</div>
-						</div>
-
-						<div class="project-cnt">
-							<div class="project-box project-box--left">
-								<section class="project-visualization">
-									<div class="project-imgs-box">
-										<div class="img-box img-box--computer">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/template.jpg" alt="" class="project-img img-box__pc-img"
-											/></a>
+									<section class="project-content project-content--left">
+										<header>
+											<h2 data-animation-delay="2" class="animated-item project-content__title">Testitly</h2>
+										</header>
+										<section data-animation-delay="3" class="animated-item project-content__description">
+											<p class="project-content__paragraph">
+												A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about
+												each track.
+											</p>
+											<p class="project-content__paragraph">Create and save new playlists of recommended tracks based on your existing playlists and more.</p>
+										</section>
+										<section class="project-technologies">
+											<div class="project-technologies__icons">
+												<div class="category-items category-items--left category-items--straight">
+													<div data-animation-delay="2" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="3" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="4" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="5" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="6" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+												</div>
+											</div>
+										</section>
+										<div class="link-box link-box--left">
+											<a data-animation-delay="7" class="animated-item link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+												><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+											></a>
+											<a data-animation-delay="8" class="animated-item link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+												><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+											></a>
 										</div>
-										<div class="img-box img-box--phone img-box--phone-left">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/template.jpg" alt="" class="project-img img-box__phone-img img-box__phone-img--left"
-											/></a>
-										</div>
-									</div>
-								</section>
-								<section class="project-content project-content--left">
-									<header>
-										<h2 class="project-content__title">CloserFX</h2>
-									</header>
-									<section class="project-content__description">
-										<p class="project-content__paragraph">
-											A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each
-											track.
-										</p>
-										<p class="project-content__paragraph">Create and save new playlists of recommended tracks based on your existing playlists and more.</p>
 									</section>
-									<section class="project-technologies">
-										<div class="project-technologies__icons">
-											<div class="category-items category-items--left category-items--straight">
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
+								</div>
+							</div>
+
+							<div class="project-cnt">
+								<div class="project-box">
+									<section class="project-visualization">
+										<div class="project-imgs-box">
+											<div data-animation-delay="0" class="animated-item img-box img-box--computer">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
+												/></a>
+											</div>
+											<div data-animation-delay="1" class="animated-item img-box img-box--phone">
+												<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
+													><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
+												/></a>
 											</div>
 										</div>
 									</section>
-									<div class="link-box link-box--left">
-										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
-											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
-										></a>
-										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
-											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
-										></a>
-									</div>
-								</section>
-							</div>
-						</div>
-
-						<div class="project-cnt">
-							<div class="project-box">
-								<section class="project-visualization">
-									<div class="project-imgs-box">
-										<div class="img-box img-box--computer">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/weather-app-pc.jpg" alt="" class="project-img img-box__pc-img"
-											/></a>
-										</div>
-										<div class="img-box img-box--phone">
-											<a href="http://weatherdub.netlify.app/" class="img-link" target="_blank"
-												><img src="./imgs/weather-app-phone.jpg" alt="" class="project-img img-box__phone-img"
-											/></a>
-										</div>
-									</div>
-								</section>
-								<section class="project-content">
-									<header>
-										<h2 class="project-content__title">Dou Maker</h2>
-									</header>
-									<section class="project-content__description">
-										<p class="project-content__paragraph">
-											Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had. Unlike tutorials that only cover a few
-											concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing
-											Spotify's OAuth flow and fetching API data in a React app.
-										</p>
-										<p class="project-content__paragraph">By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.</p>
-									</section>
-									<section class="project-technologies">
-										<div class="project-technologies__icons">
-											<div class="category-items category-items--straight">
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
-												</div>
-												<div class="category-item category-item--mini">
-													<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
-													<span class="category-item__name">Rust</span>
+									<section class="project-content">
+										<header>
+											<h2 data-animation-delay="2" class="animated-item project-content__title">Chatsy</h2>
+										</header>
+										<section data-animation-delay="3" class="animated-item project-content__description">
+											<p class="project-content__paragraph">
+												I always wanted to create some application that could allow me to text my friends in real time, so I did. Initially I wanted just simple message app, 
+												but after completing my goal I though, it would be cool add more features,
+												I programmed peer to peer connection, so user can make a video/voice call to other user, creat and modify or join to existing group, and text privately.
+											</p>
+										</section>
+										<section class="project-technologies">
+											<div class="project-technologies__icons">
+												<div class="category-items category-items--straight">
+													<div data-animation-delay="8" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="7" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:rust" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="6" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="teenyicons:html5-outline" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="5" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="cib:svelte" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
+													<div data-animation-delay="4" class="animated-item category-item category-item--mini">
+														<span class="iconify category-item__icon category-item__icon--mini" data-icon="akar-icons:redux-fill" style="color: white"></span>
+														<span class="category-item__name">Rust</span>
+													</div>
 												</div>
 											</div>
+										</section>
+										<div class="link-box">
+											<a data-animation-delay="10" class="animated-item link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
+												><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
+											></a>
+											<a data-animation-delay="9" class="animated-item link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
+												><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
+											></a>
 										</div>
 									</section>
-									<div class="link-box">
-										<a class="link-box__link" target="_blank" href="https://github.com/KosaTV/WeatherDub"
-											><span class="iconify link-box__icon link-box__icon--github" data-icon="akar-icons:github-fill"></span
-										></a>
-										<a class="link-box__link" target="_blank" href="http://weatherdub.netlify.app/"
-											><span class="iconify link-box__icon link-box__icon--globe" data-icon="bi:globe"></span
-										></a>
-									</div>
-								</section>
+								</div>
 							</div>
-						</div>
-					</section>
-					<footer class="footer">
-						<div class="footer__content">
-							<div class="icons-container">
-								<a
-									href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBWdvFKhvpKkDMBwMgFcgFtrXCVlFRjVTTtzmHzGlgtCbcdcsJnVfTpWNwsjqvQmjZJJvV"
-									target="_blank"
-									class="icons-container__link"
-								>
-									<span class="iconify icons-container__icon icons-container__icon--gmail" data-icon="cib:gmail"></span>
-								</a>
-								<a href="https://www.facebook.com/jacob.chodubski" target="_blank" class="icons-container__link">
-									<span class="iconify icons-container__icon icons-container__icon--facebook" data-icon="akar-icons:facebook-fill"></span>
-								</a>
-								<a href="https://dribbble.com/KosaTV" target="_blank" class="icons-container__link">
-									<span class="iconify icons-container__icon icons-container__icon--dribbble" data-icon="akar-icons:dribbble-fill"></span>
-								</a>
-								<a href="https://codepen.io/KosaTV" target="_blank" class="icons-container__link">
-									<span class="iconify icons-container__icon icons-container__icon--codepen" data-icon="akar-icons:codepen-fill"></span>
-								</a>
-								<a href="https://github.com/KosaTV" target="_blank" class="icons-container__link">
-									<span class="iconify icons-container__icon icons-container__icon--github" data-icon="akar-icons:github-fill"></span>
-								</a>
+						</section>
+						<footer class="footer">
+							<div class="footer__content">
+								<div class="icons-container">
+									<a href="https://github.com/KosaTV" target="_blank" class="icons-container__link">
+										<span class="iconify icons-container__icon icons-container__icon--github" data-icon="akar-icons:github-fill"></span>
+									</a>
+									<a href="https://dribbble.com/KosaTV" target="_blank" class="icons-container__link">
+										<span class="iconify icons-container__icon icons-container__icon--dribbble" data-icon="akar-icons:dribbble-fill"></span>
+									</a>
+									<a href="https://codepen.io/KosaTV" target="_blank" class="icons-container__link">
+										<span class="iconify icons-container__icon icons-container__icon--codepen" data-icon="akar-icons:codepen-fill"></span>
+									</a>
+									<a href="https://www.facebook.com/jacob.chodubski" target="_blank" class="icons-container__link">
+										<span class="iconify icons-container__icon icons-container__icon--facebook" data-icon="akar-icons:facebook-fill"></span>
+									</a>
+									<a
+										href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBWdvFKhvpKkDMBwMgFcgFtrXCVlFRjVTTtzmHzGlgtCbcdcsJnVfTpWNwsjqvQmjZJJvV"
+										target="_blank"
+										class="icons-container__link"
+									>
+										<span class="iconify icons-container__icon icons-container__icon--gmail" data-icon="cib:gmail"></span>
+									</a>
+								</div>
+								<p class="footer__rights">
+									&copy; Website created with plain
+									<span class="iconify footer__rights--icon" data-icon="fluent:javascript-24-regular"></span>
+								</p>
 							</div>
-							<p class="footer__rights">
-								&copy; Website created in plain
-								<span class="iconify footer__rights--icon" data-icon="fluent:javascript-24-regular"></span>
-							</p>
-						</div>
 
-						<img class="footer__layer footer__layer--first" src="./imgs/layer-1.svg" alt="" />
-						<img class="footer__layer footer__layer--second" src="./imgs/layer-2.svg" alt="" />
-					</footer>
-				</section>
-			</div>
-			<article class="form-cnt">
-				<header class="form-cnt__header">
-					<h2>Wanna be in touch?</h2>
-					<button class="form-cnt__close" aria-label="close"><span class="iconify" data-icon="ci:close-small"></span></button>
-				</header>
-				<form action="POST" name="" data-netlify="true" class="contact-form">
-					<div class="phone-contact">
-						<figure class="profile">
-							<img
-								class="profile__img"
-								src="https://4.bp.blogspot.com/-9mtmwQIbz9U/UhNHNEk9zwI/AAAAAAAAEbM/pxb9K-SOzSE/s1600/facebook_photo_download_194639357233682.jpg"
-								alt="profile"
-							/>
-							<figcaption class="profile__name">Jacob Chodubski</figcaption>
-						</figure>
-						<div class="phone-zone">
-							<a class="phone-zone__phone-link" href="tel:+48 516 372 029"
-								><span class="iconify phone-zone__phone-icon" data-icon="carbon:phone-filled"></span
-								><span type="button" class="phone-zone__phone-button">+48 516 372 029</span></a
-							>
-						</div>
+							<div class="footer__wave footer__wave--1"></div>
+							<div class="footer__wave footer__wave--2"></div>
+						</footer>
 					</div>
-					<fieldset class="input-info">
-						<div class="rows">
-							<div class="row row--double">
-								<label class="form-label" for="name">Your Name <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
-								<div class="input-wrapper">
-									<input required class="form-input" placeholder=" " autocomplete="new-password" id="name" name="name" type="text" />
-									<span class="form-placeholder"
-										><span class="iconify form-placeholder__icon" data-icon="mdi-light:account"></span><span class="form-placeholder__label">Robert</span></span
-									>
-								</div>
-							</div>
+				</section>
+			<article class="contact-content">
+				<div class="contact-content__placeholder">
+					<div class="slide slide--left"></div>
+					<div class="slide slide--right"></div>
+				</div>
 
-							<div class="row row--double">
-								<label class="form-label" for="email">Your E-mail <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
-								<div class="input-wrapper">
-									<input required class="form-input" placeholder=" " autocomplete="new-password" id="email" name="email" type="email" />
-									<span class="form-placeholder"
-										><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span> <span class="form-placeholder__label">robert.smith@mail.com</span></span
-									>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<label class="form-label" for="name">Your Name <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
-							<div class="input-wrapper">
-								<input required class="form-input" placeholder=" " autocomplete="new-password" id="name" name="name" type="text" />
-								<span class="form-placeholder"
-									><span class="iconify form-placeholder__icon" data-icon="mdi-light:account"></span><span class="form-placeholder__label">Robert</span></span
+				<div class="form-cnt">
+					<header class="form-cnt__header">
+						<h2 class="form-cnt__title">Wanna be in touch?</h2>
+						<button class="form-cnt__close" aria-label="close">
+							<div class="form-cnt__close-line form-cnt__close-line--first"></div>
+							<div class="form-cnt__close-line form-cnt__close-line--two"></div>
+						</button>
+						<div class="phone-contact">
+							<figure class="profile">
+								<img
+									class="profile__img"
+									src="./imgs/just_me.png"
+									alt="profile"
+								/>
+								<figcaption class="profile__name">Jacob Chodubski</figcaption>
+							</figure>
+							<div class="phone-zone">
+								<a class="phone-zone__phone-link" href="tel:+48 516 372 029"
+									><span class="iconify phone-zone__phone-icon" data-icon="carbon:phone-filled"></span
+									><span type="button" class="phone-zone__phone-button">+48 516 372 029</span></a
 								>
 							</div>
 						</div>
+					</header>
+					<form action="POST" name="" data-netlify="true" class="contact-form">
+						<fieldset class="input-info">
+							<header class="form-cnt__header form-cnt__header--desktop">
+								<h2 class="form-cnt__title form-cnt__title--desktop">Wanna be in touch?</h2>
+							</header>
+							<div class="form-inputs">
+								<div class="rows">
+									<div class="row row--double">
+										<label class="form-label" for="name">Your Name <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+										<div class="input-wrapper">
+											<input required class="form-input" placeholder=" " autocomplete="new-password" id="name" name="name" type="text" />
+											<span class="form-placeholder"
+												><span class="iconify form-placeholder__icon" data-icon="mdi-light:account"></span><span class="form-placeholder__label">Robert</span></span
+											>
+										</div>
+									</div>
 
-						<div class="not-positioned">
-							<div class="row row--area">
-								<label class="form-label" for="message">Message <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
-								<div class="input-wrapper">
-									<textarea placeholder=" " class="form-input form-input--textarea" autocomplete="new-password" name="message" id="message" cols="30" rows="10"></textarea>
-									<span class="form-placeholder form-placeholder--textarea"
-										><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span>
-										<span class="form-placeholder__label">Write something to me...</span></span
-									>
+									<div class="row row--double">
+										<label class="form-label" for="email">Your E-mail <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+										<div class="input-wrapper">
+											<input required class="form-input" placeholder=" " autocomplete="new-password" id="email" name="email" type="email" />
+											<span class="form-placeholder"
+												><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span>
+												<span class="form-placeholder__label">robert.smith@mail.com</span></span
+											>
+										</div>
+									</div>
+								</div>
+
+								<div class="not-positioned">
+									<div class="row row--area">
+										<label class="form-label" for="message">Message <span class="iconify form-label__required-icon" data-icon="emojione:glowing-star"></span></label>
+										<div class="input-wrapper">
+											<textarea placeholder=" " class="form-input form-input--textarea" autocomplete="new-password" name="message" id="message" cols="30" rows="10"></textarea>
+											<span class="form-placeholder form-placeholder--textarea"
+												><span class="iconify form-placeholder__icon" data-icon="mdi-light:email"></span>
+												<span class="form-placeholder__label">Write something to me...</span></span
+											>
+										</div>
+									</div>
+
+									<div class="submit-cnt">
+										<button class="form-submit">
+											<p class="form-submit__label">Send Message</p>
+											<span class="iconify form-submit__icon" data-icon="akar-icons:send"></span>
+										</button>
+										<img class="form-cnt__img" src="./imgs/form-contact-img.svg" alt="" />
+									</div>
 								</div>
 							</div>
-
-							<div class="submit-cnt">
-								<button class="form-submit">
-									<p class="form-submit__label">Send Message</p>
-									<span class="iconify form-submit__icon" data-icon="akar-icons:send"></span>
-								</button>
-							</div>
-						</div>
-					</fieldset>
-				</form>
-				<img class="form-cnt__img" src="./imgs/form-contact-img.svg" alt="" />
+						</fieldset>
+					</form>
+				</div>
 			</article>
 		</div>
 	</body>

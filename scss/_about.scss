@@ -10,91 +10,32 @@
 	z-index: -1;
 }
 
-.section {
-	&--about {
-		padding-top: 70px;
-
-		@include mix.media(smallPC) {
-			padding: 0;
-			@include mix.flex;
-		}
-	}
-
-	&__cnt {
-		@include mix.flex(center, space-around);
-		flex-direction: column;
-	}
-
-	&__description {
-		max-width: 600px;
-		margin-bottom: 6rem;
-		font-size: 2rem;
-		margin: 2rem 3rem;
-		font-weight: 300;
-		line-height: 1.55;
-		transform: translateY(5%) translateZ(15px);
-		opacity: 0;
-		animation: disappear 0.5s 6.5s ease-out reverse forwards, slideY 0.75s 6.5s ease-out forwards;
-
-		&--strong {
-			font-weight: 500;
-			font-style: italic;
-			animation: disappear 0.5s 6.8s ease-out reverse forwards, slideY 0.75s 6.8s ease-out forwards;
-		}
-
-		&--italic {
-			margin-top: 3rem;
-		}
-	}
-
-	&__picture {
-		max-width: 75%;
-		margin: 1rem;
-	}
-
-	@include mix.media(tablet) {
-		&--cnt {
-			padding-top: 100px;
-			min-width: 400px;
-		}
-	}
-
-	@include mix.media(smallPC) {
-		&__cnt {
-			flex-direction: row;
-		}
-
-		&__picture {
-			max-width: 40%;
-			margin: 3rem;
-		}
-
-		&__description {
-			margin: 0 4rem;
-			font-size: 2rem;
-			&--italic {
-				margin-top: 4rem;
-			}
-		}
-	}
-
-	@include mix.media(largePC) {
-		&__description {
-			font-size: 3rem;
-			max-width: 700px;
-		}
-	}
-}
-
 .about-header {
 	&__text {
 		text-align: center;
 	}
 
 	@include mix.media(smallPC) {
-		margin-left: 4rem;
+		margin-left: 0;
 		&__text {
 			text-align: start;
 		}
+	}
+}
+
+.about-description {
+	margin: 4rem;
+	&__options {
+		@include mix.flex(center, center);
+		width: 100%;
+		padding: 4rem 0;
+
+		@include mix.media(smallPC) {
+			justify-content: flex-start;
+		}
+	}
+
+	.download-resume-btn {
+		margin: 0;
 	}
 }

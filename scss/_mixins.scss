@@ -105,6 +105,26 @@ $distance-3d: 10;
 	}
 }
 
+@keyframes wave-appear {
+	0% {
+		transform: translateY(30px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 @keyframes pulse1 {
 	0% {
 		opacity: 0;
@@ -176,5 +196,14 @@ $distance-3d: 10;
 	}
 	100% {
 		background-position: 0 50%;
+	}
+}
+
+@keyframes waving {
+	0% {
+		background-position-x: 1920px;
+	}
+	100% {
+		background-position-x: 0;
 	}
 }

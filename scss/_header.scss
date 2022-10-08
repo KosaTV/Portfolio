@@ -6,10 +6,13 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	opacity: 0;
 	pointer-events: none;
+	transition: transform 0.5s 0s ease, opacity 0.5s 0s ease, background 1s 0s ease, height 0.5s 0s ease;
+	opacity: 0;
 
-	transition: transform 0.5s 0s ease, opacity 0.5s 0s ease, backdrop-filter 0.5s 0s ease, background 1s 0s ease, height 0.5s 0s ease;
+	@include mix.media(tablet) {
+		animation: none;
+	}
 
 	@supports not (backdrop-filter: blur(10px)) {
 		background: rgba(black, 0.3);
@@ -27,18 +30,21 @@
 		}
 	}
 
+	&--hidden {
+		opacity: 0;
+		pointer-events: none;
+	}
+
 	&--loaded {
 		opacity: 1;
 		pointer-events: all;
 	}
 
 	@include mix.media(tablet) {
-		// &--scrolled {
 		padding: 2rem;
 		height: initial;
 		backdrop-filter: blur(10px);
 		background: rgba(white, 0.075);
-		// }
 	}
 }
 
