@@ -55,9 +55,12 @@ $sections: ("home", "about", "skills", "projects");
 	margin: 0 auto;
 }
 
+.pink {
+	background: pink;
+}
+
 .section {
 	position: relative;
-	// padding: 75px 0;
 	z-index: 1;
 	$this: &;
 

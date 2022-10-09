@@ -29,11 +29,10 @@ const closeContactForm = e => {
 		contactForm.addEventListener(
 			"transitionend",
 			e => {
-				hidMenu(!menuSettings.isContactFormOpened);
+				hidMenu(menuSettings.isContactFormOpened);
 			},
 			{once: true}
 		);
-		menuSettings.isContactFormOpened = !menuSettings.isContactFormOpened;
 	}
 };
 
@@ -43,6 +42,7 @@ contactOption.addEventListener("click", e => {
 });
 
 contactFormCloseBtn.addEventListener("click", closeContactForm);
+
 document.addEventListener("keydown", e => {
 	if (e.key === "Escape") closeContactForm(e);
 });

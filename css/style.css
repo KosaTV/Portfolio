@@ -612,7 +612,7 @@ code {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 14%;
+  bottom: 16%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1134,8 +1134,10 @@ code {
     align-items: stretch;
     justify-content: center;
     flex-direction: row;
-    height: 95vh;
-    width: 80%;
+    height: 75vh;
+    width: 60%;
+    max-width: 1300px;
+    max-height: 1000px;
   }
 }
 
@@ -1190,12 +1192,12 @@ code {
   width: 100%;
   height: 100vh;
   overflow: auto;
-  transition: opacity 0.5s 0s linear;
+  transition: opacity 0.3s 0s linear;
 }
 .form-cnt--opened {
   opacity: 1;
   pointer-events: all;
-  transition: opacity 0.5s 0.5s linear;
+  transition: opacity 0.5s 0.55s linear;
 }
 .form-cnt__close-line {
   position: absolute;
@@ -1275,8 +1277,10 @@ code {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 95vh;
+    width: 60%;
+    height: 75vh;
+    max-width: 1300px;
+    max-height: 1000px;
   }
   .form-cnt__header {
     display: flex;
@@ -1544,7 +1548,7 @@ code {
   border-color: hsl(336deg, 100%, 50%);
 }
 .form-input--textarea {
-  max-height: 175px;
+  max-height: 300px;
 }
 @supports not selector(*:focus-visible) {
   .form-input:focus {
@@ -1718,6 +1722,10 @@ code {
 .responsive-cnt {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.pink {
+  background: pink;
 }
 
 .section {

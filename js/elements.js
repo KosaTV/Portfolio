@@ -11,3 +11,4 @@ const aboutModel3d = document.querySelector(".about-3d");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const firstFace = cubeBox.querySelector(".cube__face--1");
 const secondFace = cubeBox.querySelector(".cube__face--2");
+const rocketCnt = cubeBox.querySelector(".rocket-cnt");

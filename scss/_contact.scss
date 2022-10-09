@@ -33,8 +33,10 @@
 		@include mix.media(smallPC) {
 			@include mix.flex(stretch, center);
 			flex-direction: row;
-			height: 95vh;
-			width: 80%;
+			height: 75vh;
+			width: 60%;
+			max-width: 1300px;
+			max-height: 1000px;
 		}
 	}
 }
@@ -88,7 +90,6 @@
 .form-cnt {
 	opacity: 0;
 	position: fixed;
-
 	top: 0;
 	left: 0;
 	z-index: 10;
@@ -96,12 +97,12 @@
 	width: 100%;
 	height: 100vh;
 	overflow: auto;
-	transition: opacity 0.5s 0s linear;
+	transition: opacity 0.3s 0s linear;
 
 	&--opened {
 		opacity: 1;
 		pointer-events: all;
-		transition: opacity 0.5s 0.5s linear;
+		transition: opacity 0.5s 0.55s linear;
 	}
 
 	&__close-line {
@@ -193,8 +194,10 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 80%;
-		height: 95vh;
+		width: 60%;
+		height: 75vh;
+		max-width: 1300px;
+		max-height: 1000px;
 
 		// &::-webkit-scrollbar-track {
 		// 	background: transparent;
@@ -465,7 +468,7 @@
 	}
 
 	&--textarea {
-		max-height: 175px;
+		max-height: 300px;
 	}
 
 	@supports not selector(*:focus-visible) {
